@@ -14,6 +14,8 @@ public class BankClient {
 	
 	public static final AtomicInteger clientCount = new AtomicInteger(0);
 	
+	private static int nextClientID = 1;
+	
 	public int clientID;
 	public String name;
 	public String address;
@@ -31,16 +33,51 @@ public class BankClient {
 	
 	
 	// Constructor
-	public BankClient(int clientID, String name, String address, Date DoB, String username, String password) {
+	public BankClient(String name, String address, Date DoB, String username, String password) {
 		
-		this.clientID = clientID;
+		this.clientID = getNextClientID();
 		this.name = name;
 		this.address = address;
 		this.DoB = DoB;
 		this.username = username;
 		this.password = password;
-		
-		
+	}
+	
+	public int getNextClientID() {
+		int id = nextClientID;
+		nextClientID++;
+		return id;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public void setDoB(Date DoB) {
+		this.DoB = DoB;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getName() {
+		return name;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public Date getDoB() {
+		return DoB;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public String getpassword() {
+		return password;
 	}
 	
 	public void addAccount(String accountNumber, String accountType, double balance) {
@@ -50,6 +87,13 @@ public class BankClient {
 			accountTypes.add(accountType);
 			accountBalances.add(balance);
 		}	
+	}
+	
+	public void addAppointment(Date appointmentDate, BankEmployee Employee) {
+		if (appointmentDate != null & Employee != null) {
+			appointments.add(appointmentDate);
+			bankEmployee.add(Employee);
+		}
 	}
 	
 	public void toPrint() {
@@ -66,78 +110,7 @@ public class BankClient {
 		}
 	}
 	
-	public static void main(String[] args) throws ParseException {
-		
-		List<BankClient> bankClients = new ArrayList<>();
-		
-		while(true) {
-			print(bankClients);
-			
-			System.out.println("\n0. Exit");
-			System.out.println("1. Register");
-			System.out.println("2. Login");
-			System.out.println("3. Delete Bank account");
-			System.out.println("4. Book Appointment");
-			
-			String choice = read("choice");
-			
-			
-			if (choice.equals("0")) {
-				
-				break;
-			}
-			
-			else if (choice.equals("1")) {
-				
-				break;
-			}
-			
-			else if (choice.equals("2")) {
-				
-				break;
-			}
-			
-			else if (choice.equals("3")) {
 	
-				break;
-			}
-			
-			else if (choice.equals("4")) {
-	
-				break;
-			}
-		}
-	}
-		
-
-	public static String read( String label ) {
-
-		System.out.println( "\nProvide your " + label + ":" );
-
-		System.out.println( ">" );
-
-
-		BufferedReader input = new BufferedReader( new InputStreamReader( System.in ) );
-
-		String value = null;
-
-		try {
-
-			value = input.readLine();
-		}
-
-		catch (IOException ex) { ex.printStackTrace(); }
-
-
-		return value;
-	}
-	
-	public static void print( List<BankClient> clients ) {
-
-		System.out.println( "Bank Clients:\n" );
-
-		for( int i = 0; clients != null && i < clients.size(); ++i ) clients.get( i ).toPrint();
-	}
 
 
 	
