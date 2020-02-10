@@ -41,6 +41,15 @@ public class BankClient {
 		this.DoB = DoB;
 		this.username = username;
 		this.password = password;
+		
+		accountNumbers = new ArrayList<String>();
+		accountTypes = new ArrayList<String>();
+		accountBalances = new ArrayList<Double>();
+
+		appointments = new ArrayList<Date>();
+		bankEmployee = new ArrayList<BankEmployee>();
+		
+		
 	}
 	
 	public int getNextClientID() {
@@ -113,22 +122,50 @@ public class BankClient {
 							
 							accountBalances.set(wAccount, (balance-Double.parseDouble(amountToTransfer))); // if it does then decrease balance by the amount
 							accountBalances.set(dAccount, (accountBalances.get(dAccount)+Double.parseDouble(amountToTransfer))); // and increase deposited account by the same amount
-
 						}	
 					}	
 				}
 				else {
 					System.out.println("Insufficient funds - transfer can not be made");
 				}
-				
 			}
 		}		
+	}
+	
+	public void deleteBankAccount(String accountNumber) { // any remaining funds will be transfered to another account
+		
+		List<String> newListAccountNumbers = new ArrayList<String>(); 
+		List<String> newListAccountTypes = new ArrayList<String>(); 
+		List<Double> newListAccountBalances = new ArrayList<Double>();
+
+		int index = 0;
+		
+		for(int account = 0; account< accountNumbers.size(); account++) { // get index of account to be deleted
+			if (accountNumbers.get(account).equals(accountNumber));
+			index = account;
+		}
+		
+		for ( int accUntil = 0; accUntil < index; accUntil++) { // for every account before the account to be deleted add it to a temp array
+			newListAccountNumbers.add(accountNumbers.get(accUntil));
+			newListAccountTypes.add(accountTypes.get(accUntil));
+			newListAccountBalances.add(accountBalances.get(accUntil));
+		}
+		
+		for (int accAfter = index+1; accAfter < accountNumbers.size(); accAfter++) { // skip array to be deleted and add the rest of the account details to their respective arraylists
+			newListAccountNumbers.add(accountNumbers.get(accAfter));
+			newListAccountTypes.add(accountTypes.get(accAfter));
+			newListAccountBalances.add(accountBalances.get(accAfter));
+		}
+		
+		// overwrite old arraylists with new arraylist without the account that was deleted
+		accountNumbers = newListAccountNumbers; 
+		accountTypes = newListAccountTypes;
+		accountBalances = newListAccountBalances;
 	}
 	
 	public void toPrint() {
 
 		System.out.println( "Client ID = " + clientID + ", Name = " + name + "\n\nAddress = " + address + ", Date of Birth = " + DoB + ",Username = " + username);
-
 
 		if (accountNumbers != null) {
 			for (int i = 0; i <accountNumbers.size(); i++) { // iterate through list of their accounts

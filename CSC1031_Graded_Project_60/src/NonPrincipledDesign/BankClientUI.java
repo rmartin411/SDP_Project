@@ -110,19 +110,25 @@ public static void main(String[] args) throws ParseException {
 								
 								// checkTransactionStructure
 								
-								
 								clientLoggedIn.makeTransfer(withdrawAccountNum, depositAccountNum, amountToTransfer);
 								
 							}
 							
-							else if (clientChoice.equals("6")) {
+							else if (clientChoice.equals("6")) { // Book appointment
 								
-								break;
+								System.out.println("\n\n===Book an appointment===\n");
+								
+								String withdrawAccountNum = read("Date of appointment");	
+								String employee = read("Employee's name you wish to book an appointment with");
 							}
 							
-							else if (clientChoice.equals("7")) {
+							else if (clientChoice.equals("7")) { // Delete bank account
 								
-								break;
+								System.out.println("\n\n===Delete a bank account===\n");
+								
+								String deleteAccountNum = read("account number to be deleted");	
+								
+								clientLoggedIn.deleteBankAccount(deleteAccountNum);
 							}
 
 						}
