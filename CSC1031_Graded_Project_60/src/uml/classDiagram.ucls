@@ -4,7 +4,7 @@
   <class id="1" language="java" name="NonPrincipledDesign.BankAdministrator" project="CSC1031_Graded_Project_60" 
     file="/CSC1031_Graded_Project_60/src/NonPrincipledDesign/BankAdministrator.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="83" width="151" x="309" y="174"/>    
+    <position height="-1" width="-1" x="300" y="194"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -13,7 +13,7 @@
   </class>  
   <class id="2" language="java" name="NonPrincipledDesign.BankEmployee" project="CSC1031_Graded_Project_60" 
     file="/CSC1031_Graded_Project_60/src/NonPrincipledDesign/BankEmployee.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="137" width="163" x="500" y="585"/>    
+    <position height="-1" width="-1" x="346" y="618"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -39,9 +39,13 @@
     </display>  
   </class>  
   <association id="5">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="6" name="bankClients"/>      
-      <multiplicity id="7" minimum="0" maximum="2147483647"/>    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="6" name="bankEmployee">        
+        <position height="0" width="0" x="-235" y="-35"/>      
+      </attribute>      
+      <multiplicity id="7" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="-235" y="-35"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
@@ -51,9 +55,13 @@
     <end type="TARGET" refId="4"/>  
   </dependency>  
   <association id="9">    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="10" name="bankEmployee"/>      
-      <multiplicity id="11" minimum="0" maximum="2147483647"/>    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="10" name="bankClients">        
+        <position height="0" width="0" x="-235" y="-35"/>      
+      </attribute>      
+      <multiplicity id="11" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="-235" y="-35"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  

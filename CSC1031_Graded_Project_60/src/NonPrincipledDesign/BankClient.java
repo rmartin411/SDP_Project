@@ -96,6 +96,35 @@ public class BankClient {
 		}
 	}
 	
+	
+	public void makeTransfer(String withdrawAccountNum, String depositAccountNum, String amountToTransfer) {
+		
+		for (int wAccount = 0; wAccount < accountNumbers.size(); wAccount++) {
+			
+			if (accountNumbers.get(wAccount).equals(withdrawAccountNum)) { // check account belongs to client
+				
+				double balance = accountBalances.get(wAccount); // get the balance of withdrawal account
+				
+				if (balance >= Double.parseDouble(amountToTransfer)) { // check the user has enough money in their account
+					
+					for (int dAccount = 0; dAccount < accountNumbers.size(); dAccount++) {
+						
+						if (accountNumbers.get(wAccount).equals(depositAccountNum)) { // check deposit account belongs to user 
+							
+							accountBalances.set(wAccount, (balance-Double.parseDouble(amountToTransfer))); // if it does then decrease balance by the amount
+							accountBalances.set(dAccount, (accountBalances.get(dAccount)+Double.parseDouble(amountToTransfer))); // and increase deposited account by the same amount
+
+						}	
+					}	
+				}
+				else {
+					System.out.println("Insufficient funds - transfer can not be made");
+				}
+				
+			}
+		}		
+	}
+	
 	public void toPrint() {
 
 		System.out.println( "Client ID = " + clientID + ", Name = " + name + "\n\nAddress = " + address + ", Date of Birth = " + DoB + ",Username = " + username);

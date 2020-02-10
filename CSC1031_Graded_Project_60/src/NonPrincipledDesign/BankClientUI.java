@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,8 +20,6 @@ public static void main(String[] args) throws ParseException {
 			System.out.println("\n0. Exit");
 			System.out.println("1. Register");
 			System.out.println("2. Login");
-			System.out.println("3. Delete Bank account");
-			System.out.println("4. Book Appointment");
 			
 			String choice = read("choice");
 			
@@ -32,7 +31,9 @@ public static void main(String[] args) throws ParseException {
 			
 			else if (choice.equals("1")) {
 				
-				RegisterBankClient.UserDetails();
+				BankClient client = RegisterBankClient.ProvideUserDetails();
+				
+				bankClients.add(client);
 			}
 			
 			else if (choice.equals("2")) {
@@ -42,9 +43,13 @@ public static void main(String[] args) throws ParseException {
 				
 				for (BankClient client : bankClients) {
 					
+					System.out.println(client.getName());
+					
 					if (client.getUsername().equals(usernameProvided) && client.getpassword().equals(passwordProvided)){
 						
 						System.out.println("\nHello " + client.getName() + "\n\n");
+						
+						BankClient clientLoggedIn = client;
 						
 						while(true) {
 							
@@ -70,24 +75,44 @@ public static void main(String[] args) throws ParseException {
 								break;
 							}
 							
-							else if (clientChoice.equals("2")) {
+							else if (clientChoice.equals("2")) { // create account
 								
-								break;
+								System.out.println("\n\n===Create account===\n");
+								
+								String accNum = read("Account number");	
+								String accType = read("Account Type");		
+								String accBalance = read("Account balance");		
+								
+								clientLoggedIn.accountNumbers.add(accNum);
+								clientLoggedIn.accountTypes.add(accType);
+								clientLoggedIn.accountBalances.add(Double.parseDouble(accBalance));
+																
 							}
 							
 							else if (clientChoice.equals("3")) {
 								
-								break;
+								clientLoggedIn.toPrint();
 							}
 							
 							else if (clientChoice.equals("4")) {
 								
-								break;
+								clientLoggedIn.toPrint();
+
 							}
 							
 							else if (clientChoice.equals("5")) {
 								
-								break;
+								System.out.println("\n\n===Transfer Money===\n");
+								
+								String withdrawAccountNum = read("withdrawal account number");	
+								String depositAccountNum = read("deposited account number");		
+								String amountToTransfer = read("amount to transfer");
+								
+								// checkTransactionStructure
+								
+								
+								clientLoggedIn.makeTransfer(withdrawAccountNum, depositAccountNum, amountToTransfer);
+								
 							}
 							
 							else if (clientChoice.equals("6")) {
@@ -108,15 +133,6 @@ public static void main(String[] args) throws ParseException {
 				
 			}
 			
-			else if (choice.equals("3")) {
-	
-				break;
-			}
-			
-			else if (choice.equals("4")) {
-	
-				break;
-			}
 		}
 	}
 		
