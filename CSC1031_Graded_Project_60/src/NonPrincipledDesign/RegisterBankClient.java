@@ -10,29 +10,52 @@ import java.text.SimpleDateFormat;
 
 public class RegisterBankClient {
 	
-	public static BankClient ProvideUserDetails() throws ParseException {
+	public static void ProvideUserDetails() throws ParseException {
 		
 		System.out.println("\n\n===Client registration===\n");
 		
-		String name = read("Name");	
-		String address = read("Address");		
-		String DoB = read("Date of birth (DD/MM/YYYY)");		
+		String name = read("name");	
+		String address = read("address");		
+		String DoB = read("date of birth (DD/MM/YYYY)");		
 		
 		String username = read("username");
-		String password = read("Password");
+		String password = read("password");
 		
-		BankClient client = new BankClient(name, address, new SimpleDateFormat("dd/MM/yyyy").parse(DoB), username, password);
+		String password2 = read("password again");
 		
-		return client;
+		
+		boolean checked = checkRegistrationStructure(name, address, DoB, username, password, password2);
+		
+		executeRegistrationTransaction()
 		
 		
 	}
 	
-	public static void checkRegistrationStructure() {
+	public static boolean checkRegistrationStructure(String name, String address, String DoB, String username, String password, String password2) throws ParseException {
 		
+		boolean structure = false;
+		
+		if (name != null && address != null && DoB != null & username != null & password != null && password2 != null) {
+			if (name.isEmpty() == false && address.isEmpty() == false && DoB.isEmpty() == false & username.isEmpty() == false & password.isEmpty() == false && password2.isEmpty() == false)
+				if (password.equals(password2)) {
+					
+					return true;
+					
+
+					
+				}
+				else {
+					System.out.println("Passwords do not match");
+				}
+			}
+	
+		else {
+			System.out.println("Please fill out all fields");
+		}
+		
+		return false;
 	}
-	
-	
+			
 	
 	public static String read( String label ) {
 

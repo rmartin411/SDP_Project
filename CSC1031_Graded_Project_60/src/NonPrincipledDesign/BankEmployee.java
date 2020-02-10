@@ -4,27 +4,47 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class BankEmployee {
+public class BankEmployee extends User{
 	
-	public List<Date> appointments;
-	public List<BankEmployee> bankClients;
+	private static int nextEmployeeID = 1;
+	
+	public int employeeID;
+	public List<Appointments> appointments;
+	
+	
+	public BankEmployee(String name, String address, Date DoB) {
+		super(name, address, DoB);
+		// TODO Auto-generated constructor stub
+		
+		this.employeeID = getNextEmployeeID();
+		
+		appointments = new ArrayList<Appointments>();
+		
+		
+	}
+	
+	
+	public int getNextEmployeeID() {
+		int id = nextEmployeeID;
+		nextEmployeeID++;
+		return id;
+	}
 	
 	
 	public static void main(String[] args) {
-		if (new File ("BankNotifications").exists() ) {
-			
-			String notifications = FileManager.read("BankNotifications");
-			
-			if (notifications != null) System.out.println("Received Notifications: " + notifications);
-			
-			// instantiate objects of appointments
-			
-			
-			
-		}
+		
+		
+	}
+	
+	public void notify(Appointments app) {
+		
+		
+		
+		
 		
 	}
 	

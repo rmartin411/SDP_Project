@@ -55,7 +55,7 @@ public static void main(String[] args) throws ParseException {
 							
 							System.out.println("\n0. Log out");
 							System.out.println("1. Create profile");
-							System.out.println("2. Create account");
+							System.out.println("2. Create bank account");
 							System.out.println("3. View account");
 							System.out.println("4. View profile");
 							System.out.println("5. Transfer money");
@@ -77,15 +77,9 @@ public static void main(String[] args) throws ParseException {
 							
 							else if (clientChoice.equals("2")) { // create account
 								
-								System.out.println("\n\n===Create account===\n");
+								CreateSavingsAccount.CreateAccount();
 								
-								String accNum = read("Account number");	
-								String accType = read("Account Type");		
-								String accBalance = read("Account balance");		
 								
-								clientLoggedIn.accountNumbers.add(accNum);
-								clientLoggedIn.accountTypes.add(accType);
-								clientLoggedIn.accountBalances.add(Double.parseDouble(accBalance));
 																
 							}
 							

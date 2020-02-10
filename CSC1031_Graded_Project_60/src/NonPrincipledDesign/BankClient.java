@@ -10,44 +10,40 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 
-public class BankClient {
+public class BankClient extends User{
 	
 	public static final AtomicInteger clientCount = new AtomicInteger(0);
 	
 	private static int nextClientID = 1;
 	
 	public int clientID;
-	public String name;
-	public String address;
-	public Date DoB;
-	
+
 	public String username;
 	public String password;
 	
-	public List<String> accountNumbers;
-	public List<String> accountTypes;
-	public List<Double> accountBalances;
+	public List<BankAccount>bankAccounts;
 	
-	public List<Date> appointments;
-	public List<BankEmployee> bankEmployee;
+	public List<Appointments> bookedAppointments;
+	public List<Appointments> ScheduledAppointments;
 	
 	
 	// Constructor
 	public BankClient(String name, String address, Date DoB, String username, String password) {
 		
+		super(name, address, DoB);
+		
 		this.clientID = getNextClientID();
-		this.name = name;
-		this.address = address;
-		this.DoB = DoB;
+		//this.name = name;
+		//this.address = address;
+		//this.DoB = DoB;
 		this.username = username;
 		this.password = password;
 		
-		accountNumbers = new ArrayList<String>();
-		accountTypes = new ArrayList<String>();
-		accountBalances = new ArrayList<Double>();
+		bankAccounts = new ArrayList<BankAccount>();
+		
+		bookedAppointments = new ArrayList<Appointments>();
+		ScheduledAppointments = new ArrayList<Appointments>();
 
-		appointments = new ArrayList<Date>();
-		bankEmployee = new ArrayList<BankEmployee>();
 		
 		
 	}
@@ -92,36 +88,46 @@ public class BankClient {
 	public void addAccount(String accountNumber, String accountType, double balance) {
 		
 		if (accountNumber != null && accountType != null && balance >= 0.0) {
-			accountNumbers.add(accountNumber);
-			accountTypes.add(accountType);
-			accountBalances.add(balance);
+			
+			BankAccount account = new SavingsAccount( accountNumber, accountType, balance);
+			bankAccounts.add(account);
+			
 		}	
 	}
 	
+	
+	
 	public void addAppointment(Date appointmentDate, BankEmployee Employee) {
 		if (appointmentDate != null & Employee != null) {
-			appointments.add(appointmentDate);
-			bankEmployee.add(Employee);
+			
+			Appointments appointment = new Appointments(appointmentDate, Employee, this);
+			
+			bookedAppointments.add(appointment);
+			
+			BankEmployee.notify(appointment);
+			
 		}
 	}
 	
 	
 	public void makeTransfer(String withdrawAccountNum, String depositAccountNum, String amountToTransfer) {
 		
-		for (int wAccount = 0; wAccount < accountNumbers.size(); wAccount++) {
+		for (int wAccount = 0; wAccount < bankAccounts.size(); wAccount++) {
 			
-			if (accountNumbers.get(wAccount).equals(withdrawAccountNum)) { // check account belongs to client
+			
+			
+			if (bankAccounts.get(wAccount).accountNumber.equals(withdrawAccountNum)) { // check account belongs to client
 				
-				double balance = accountBalances.get(wAccount); // get the balance of withdrawal account
+				double balance = bankAccounts.get(wAccount).accountBalance; // get the balance of withdrawal account
 				
 				if (balance >= Double.parseDouble(amountToTransfer)) { // check the user has enough money in their account
 					
-					for (int dAccount = 0; dAccount < accountNumbers.size(); dAccount++) {
+					for (int dAccount = 0; dAccount < bankAccounts.size(); dAccount++) {
 						
-						if (accountNumbers.get(wAccount).equals(depositAccountNum)) { // check deposit account belongs to user 
-							
-							accountBalances.set(wAccount, (balance-Double.parseDouble(amountToTransfer))); // if it does then decrease balance by the amount
-							accountBalances.set(dAccount, (accountBalances.get(dAccount)+Double.parseDouble(amountToTransfer))); // and increase deposited account by the same amount
+						if (bankAccounts.get(wAccount).accountNumber.equals(depositAccountNum)) { // check deposit account belongs to user 
+									
+							bankAccounts.get(wAccount).setAccountBalance(balance-Double.parseDouble(amountToTransfer)); // if it does then decrease balance by the amount
+							bankAccounts.get(dAccount).setAccountBalance(bankAccounts.get(dAccount).accountBalance+Double.parseDouble(amountToTransfer)); // and increase deposited account by the same amount
 						}	
 					}	
 				}
@@ -134,44 +140,38 @@ public class BankClient {
 	
 	public void deleteBankAccount(String accountNumber) { // any remaining funds will be transfered to another account
 		
-		List<String> newListAccountNumbers = new ArrayList<String>(); 
-		List<String> newListAccountTypes = new ArrayList<String>(); 
-		List<Double> newListAccountBalances = new ArrayList<Double>();
-
+		List<BankAccount> newListBankAccounts = new ArrayList<BankAccount>(); 
+		
 		int index = 0;
 		
-		for(int account = 0; account< accountNumbers.size(); account++) { // get index of account to be deleted
-			if (accountNumbers.get(account).equals(accountNumber));
-			index = account;
+		for(int account = 0; account< bankAccounts.size(); account++) { // get index of account to be deleted
+			if (bankAccounts.get(account).accountNumber.equals(accountNumber)) {
+				index = account;
+			}
 		}
 		
 		for ( int accUntil = 0; accUntil < index; accUntil++) { // for every account before the account to be deleted add it to a temp array
-			newListAccountNumbers.add(accountNumbers.get(accUntil));
-			newListAccountTypes.add(accountTypes.get(accUntil));
-			newListAccountBalances.add(accountBalances.get(accUntil));
+			newListBankAccounts.add(bankAccounts.get(accUntil));
 		}
 		
-		for (int accAfter = index+1; accAfter < accountNumbers.size(); accAfter++) { // skip array to be deleted and add the rest of the account details to their respective arraylists
-			newListAccountNumbers.add(accountNumbers.get(accAfter));
-			newListAccountTypes.add(accountTypes.get(accAfter));
-			newListAccountBalances.add(accountBalances.get(accAfter));
+		for (int accAfter = index+1; accAfter < bankAccounts.size(); accAfter++) { // skip array to be deleted and add the rest of the account details to their respective arraylists
+			newListBankAccounts.add(bankAccounts.get(accAfter));
 		}
 		
 		// overwrite old arraylists with new arraylist without the account that was deleted
-		accountNumbers = newListAccountNumbers; 
-		accountTypes = newListAccountTypes;
-		accountBalances = newListAccountBalances;
+		bankAccounts = newListBankAccounts; 
+		
 	}
 	
 	public void toPrint() {
 
-		System.out.println( "Client ID = " + clientID + ", Name = " + name + "\n\nAddress = " + address + ", Date of Birth = " + DoB + ",Username = " + username);
+		System.out.println( "Client ID = " + clientID + ", Name = " + name + "\n\nAddress = " + address + ", Date of Birth = " + DoB + ", Username = " + username);
 
-		if (accountNumbers != null) {
-			for (int i = 0; i <accountNumbers.size(); i++) { // iterate through list of their accounts
-				System.out.println( "\tAccount Number = " + accountNumbers.get(i)); 
-				System.out.println( "\tAccount Type = " + accountTypes.get(i)); 
-				System.out.println( "\tAccount Number = " + accountBalances.get(i) + "\n\n"); 
+		if (bankAccounts != null) {
+			for (int i = 0; i <bankAccounts.size(); i++) { // iterate through list of their accounts
+				System.out.println( "\tAccount Number = " + bankAccounts.get(i).accountNumber); 
+				System.out.println( "\tAccount Type = " + bankAccounts.get(i).accountType); 
+				System.out.println( "\tAccount Balance = " + bankAccounts.get(i).accountBalance + "\n\n"); 
 			}	
 		}
 	}
