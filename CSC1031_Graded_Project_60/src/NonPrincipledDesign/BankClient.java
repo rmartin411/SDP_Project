@@ -104,7 +104,7 @@ public class BankClient extends User{
 			
 			bookedAppointments.add(appointment);
 			
-			BankEmployee.notify(appointment);
+			//BankEmployee.notify(appointment);
 			
 		}
 	}

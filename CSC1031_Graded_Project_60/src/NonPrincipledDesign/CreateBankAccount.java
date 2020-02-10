@@ -2,6 +2,6 @@ package NonPrincipledDesign;
 
 public abstract class CreateBankAccount {
 	
-	public abstract void createAccount(); 
+	public abstract BankAccount createAccount(); 
 
 }

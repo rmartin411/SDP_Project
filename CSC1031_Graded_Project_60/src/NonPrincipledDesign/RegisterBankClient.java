@@ -10,7 +10,7 @@ import java.text.SimpleDateFormat;
 
 public class RegisterBankClient {
 	
-	public static void ProvideUserDetails() throws ParseException {
+	public static BankClient ProvideUserDetails() throws ParseException {
 		
 		System.out.println("\n\n===Client registration===\n");
 		
@@ -26,11 +26,19 @@ public class RegisterBankClient {
 		
 		boolean checked = checkRegistrationStructure(name, address, DoB, username, password, password2);
 		
-		executeRegistrationTransaction()
+		BankClient client = executeRegistrationTransaction();
+		
+		return client;
 		
 		
 	}
 	
+	private static BankClient executeRegistrationTransaction() {
+		// TODO Auto-generated method stub
+		
+		return null;
+	}
+
 	public static boolean checkRegistrationStructure(String name, String address, String DoB, String username, String password, String password2) throws ParseException {
 		
 		boolean structure = false;

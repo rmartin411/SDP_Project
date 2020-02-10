@@ -77,7 +77,9 @@ public static void main(String[] args) throws ParseException {
 							
 							else if (clientChoice.equals("2")) { // create account
 								
-								CreateSavingsAccount.CreateAccount();
+								BankAccount account = CreateSavingsAccount.createAccount();
+								
+								clientLoggedIn.bankAccounts.add(account);
 								
 								
 																
