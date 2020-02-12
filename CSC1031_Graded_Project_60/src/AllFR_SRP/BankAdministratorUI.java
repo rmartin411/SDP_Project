@@ -2,11 +2,18 @@ package AllFR_SRP;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BankAdministratorUI {
 
 	public static void main(String[] args) throws ParseException {
 		// TODO Auto-generated method stub
+		
+		List<Appointments> toBeScheduledBookings = new ArrayList<Appointments>();
+		List<Appointments> ScheduledBookings = new ArrayList<Appointments>();
+
+		BankAdministrator admin = new BankAdministrator("Admin", "QUB", new SimpleDateFormat("dd/MM/yyy").parse("12/01/2001"));
 		
 		BankClient client1 = new BankClient("Ross Martin", "QUB", new SimpleDateFormat("dd/MM/yyy").parse("12/01/2001"), "username1", "password1");
 		BankClient client2 = new BankClient("Austin Martin", "BHS", new SimpleDateFormat("dd/MM/yyy").parse("22/08/2004"), "username1", "password1");
@@ -23,6 +30,13 @@ public class BankAdministratorUI {
 		
 		client2.bankAccounts.add(account2);
 		client2.bankAccounts.add(account3);
+		
+		
+		Appointments appointment = new Appointments(new SimpleDateFormat("dd/MM/yyy").parse("12/01/2001"), admin, client1);
+		
+		
+		
+		
 		
 		
 

@@ -53,6 +53,7 @@ public class BookAppointmentTransaction   {
 		Appointments object = new Appointments(new SimpleDateFormat("dd/MM/yyyy").parse(dateOfAppointment), employee, clientLoggedIn);
 		
 		employee.appointments.add(object);
+		
 	}
 
 }

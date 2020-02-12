@@ -56,8 +56,8 @@ public static void main(String[] args) throws ParseException {
 							System.out.println("\n0. Log out");
 							System.out.println("1. Create profile");
 							System.out.println("2. Create bank account");
-							System.out.println("3. View account");
-							System.out.println("4. View profile");
+							System.out.println("3. View account details");
+							System.out.println("4. View profile details");
 							System.out.println("5. Change profile details");
 							System.out.println("6. Transfer money");
 							System.out.println("7. Book appointment");
