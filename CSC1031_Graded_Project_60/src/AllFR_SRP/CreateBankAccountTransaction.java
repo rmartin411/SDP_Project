@@ -4,7 +4,7 @@ import java.util.List;
 
 //import exampleGroupProject.principledDesign.principles.SRP.FR1_SRP.StdInput;
 
-public class CreateBankAccountTransaction {
+public class CreateBankAccountTransaction implements TransactionInterface {
 	
 	public String accountNumber;
 	public String accountType;
@@ -27,7 +27,7 @@ public class CreateBankAccountTransaction {
 	}
 
 	
-	private void printErrorMessage(String error) {
+	public void printErrorMessage(String error) {
 
 		System.out.println( error );
 	}
@@ -42,7 +42,7 @@ public class CreateBankAccountTransaction {
 	}
 	
 	
-	private String checkTransactionStructure() {
+	public String checkTransactionStructure() {
 
 		if( accountNumber == null || accountNumber.matches("[0-9]+") == false) return "Error account number";
 

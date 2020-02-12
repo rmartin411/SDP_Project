@@ -43,6 +43,9 @@ public class BankClient extends User{
 		
 		bookedAppointments = new ArrayList<Appointments>();
 		ScheduledAppointments = new ArrayList<Appointments>();
+		
+		
+		clientCount.incrementAndGet();
 
 		
 		
@@ -80,16 +83,17 @@ public class BankClient extends User{
 		this.password = password;
 	}
 	
-	public void addAccount(String accountNumber, String accountType, double balance) {
-		
-		if (accountNumber != null && accountType != null && balance >= 0.0) {
-			
-			BankAccount account = new SavingsAccount( accountNumber, accountType, balance);
-			bankAccounts.add(account);
-			
-		}	
-	}
-	
+	/*
+	 * public void addAccount(String accountNumber, String accountType, double
+	 * balance) {
+	 * 
+	 * if (accountNumber != null && accountType != null && balance >= 0.0) {
+	 * 
+	 * BankAccount account = new SavingsAccount( accountNumber, accountType,
+	 * balance); bankAccounts.add(account);
+	 * 
+	 * } }
+	 */	
 	
 	
 	public void addAppointment(Date appointmentDate, BankEmployee Employee) {

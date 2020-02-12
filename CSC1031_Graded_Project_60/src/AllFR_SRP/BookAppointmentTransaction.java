@@ -3,7 +3,7 @@ package AllFR_SRP;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-public class BookAppointmentTransaction {
+public class BookAppointmentTransaction implements TransactionInterface  {
 	
 	public String dateOfAppointment;
 	public String nameOfEmployee;
@@ -37,12 +37,12 @@ public class BookAppointmentTransaction {
 		
 	}
 
-	private String checkTransactionStructure() {
+	public String checkTransactionStructure() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	private void printErrorMessage(String error) {
+	public void printErrorMessage(String error) {
 
 		System.out.println( error );
 	}

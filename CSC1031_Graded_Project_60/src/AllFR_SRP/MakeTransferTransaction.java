@@ -1,6 +1,6 @@
 package AllFR_SRP;
 
-public class MakeTransferTransaction {
+public class MakeTransferTransaction implements TransactionInterface {
 	
 	public String withdrawAccountNum;
 	public String depositAccountNum;
@@ -28,7 +28,7 @@ public class MakeTransferTransaction {
 		
 	}
 
-	private void provideTransferDetails() {
+	public void provideTransferDetails() {
 		// TODO Auto-generated method stub
 		
 		System.out.println("\n\n=== Transfer Money ===\n");
@@ -41,7 +41,7 @@ public class MakeTransferTransaction {
 		
 	}
 
-	private String checkTransactionStructure() {
+	public String checkTransactionStructure() {
 		
 		if (Double.parseDouble(amountToTransfer) <0.0) return "Transfer amount must be positive";
 		
@@ -78,7 +78,7 @@ public class MakeTransferTransaction {
 		return null;
 	}
 
-	private void printErrorMessage(String error) {
+	public void printErrorMessage(String error) {
 		// TODO Auto-generated method stub
 		System.out.println(error);
 	}

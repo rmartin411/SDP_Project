@@ -13,14 +13,14 @@ import java.util.List;
 
 
 
-public class RegisterClientTransaction {
+public class RegisterClientTransaction implements TransactionInterface  {
 	
-	public String name;
-	public String address;
-	public String DoB;
-	public String username;
-	public String password;
-	public String password2;
+	private String name;
+	private String address;
+	private String DoB;
+	private String username;
+	private String password;
+	private String password2;
 	
 	
 	public void registerNewClient(List<BankClient> clients) throws ParseException {
@@ -35,7 +35,7 @@ public class RegisterClientTransaction {
 		
 	}
 
-	public void provideClientDetails() {
+	private void provideClientDetails() {
 		
 		System.out.println("\n\n===Client Registration===\n");
 		
@@ -54,7 +54,7 @@ public class RegisterClientTransaction {
 	
 	
 
-	public String checkTransactionStructure() throws ParseException {
+	private String checkTransactionStructure() throws ParseException {
 		
 		if( name == null || address == null || DoB == null ) return "Error client transaction";
 
@@ -78,26 +78,26 @@ public class RegisterClientTransaction {
 	System.err.println( message );		
 	}
 			
-	public static String read( String label ) {
-
-		System.out.println( "\nProvide your " + label + ":" );
-
-		System.out.println( ">" );
-
-
-		BufferedReader input = new BufferedReader( new InputStreamReader( System.in ) );
-
-		String value = null;
-
-		try {
-
-			value = input.readLine();
-		}
-
-		catch (IOException ex) { ex.printStackTrace(); }
-
-
-		return value;
-	}
-
+	/*
+	 * public static String read( String label ) {
+	 * 
+	 * System.out.println( "\nProvide your " + label + ":" );
+	 * 
+	 * System.out.println( ">" );
+	 * 
+	 * 
+	 * BufferedReader input = new BufferedReader( new InputStreamReader( System.in )
+	 * );
+	 * 
+	 * String value = null;
+	 * 
+	 * try {
+	 * 
+	 * value = input.readLine(); }
+	 * 
+	 * catch (IOException ex) { ex.printStackTrace(); }
+	 * 
+	 * 
+	 * return value; }
+	 */
 }

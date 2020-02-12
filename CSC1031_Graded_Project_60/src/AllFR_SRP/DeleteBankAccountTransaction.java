@@ -3,7 +3,7 @@ package AllFR_SRP;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DeleteBankAccountTransaction {
+public class DeleteBankAccountTransaction implements TransactionInterface  {
 	
 	public String accountNumberProvided;
 	public BankClient client;
@@ -33,7 +33,7 @@ public class DeleteBankAccountTransaction {
 		
 	}
 	
-	private String checkTransactionStructure() {
+	public String checkTransactionStructure() {
 		// TODO Auto-generated method stub
 		
 		for(int account = 0; account< client.bankAccounts.size(); account++) { // get index of account to be deleted
@@ -48,7 +48,7 @@ public class DeleteBankAccountTransaction {
 		return null;
 	}
 
-	private void printErrorMessage(String error) {
+	public void printErrorMessage(String error) {
 		System.out.println( error );
 	}
 

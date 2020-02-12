@@ -8,7 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-public class ChangeClientDetailsTransaction {
+public class ChangeClientDetailsTransaction implements TransactionInterface {
 	
 	public String name;
 	public String address;
@@ -90,7 +90,7 @@ public class ChangeClientDetailsTransaction {
 	
 	
 
-	public String checkTransactionStructure() throws ParseException {
+	 public String checkTransactionStructure() throws ParseException {
 		
 		if( name == null || address == null || DoB == null ) return "Error client transaction";
 
@@ -107,7 +107,7 @@ public class ChangeClientDetailsTransaction {
 		
 	}
 
-	private void printErrorMessage(String message) {
+	public void printErrorMessage(String message) {
 
 	System.err.println( message );		
 	}
