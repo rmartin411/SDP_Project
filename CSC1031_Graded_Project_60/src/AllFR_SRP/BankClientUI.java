@@ -1,4 +1,4 @@
-package NonPrincipledDesign;
+package AllFR_SRP;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -31,9 +31,9 @@ public static void main(String[] args) throws ParseException {
 			
 			else if (choice.equals("1")) {
 				
-				BankClient client = RegisterBankClient.ProvideUserDetails();
+				RegisterClientTransaction object = new RegisterClientTransaction();
 				
-				bankClients.add(client);
+				object.registerNewClient(bankClients);
 			}
 			
 			else if (choice.equals("2")) {
@@ -58,9 +58,10 @@ public static void main(String[] args) throws ParseException {
 							System.out.println("2. Create bank account");
 							System.out.println("3. View account");
 							System.out.println("4. View profile");
-							System.out.println("5. Transfer money");
-							System.out.println("6. Book appointment");
-							System.out.println("7. Delete bank account");
+							System.out.println("5. Change profile details");
+							System.out.println("6. Transfer money");
+							System.out.println("7. Book appointment");
+							System.out.println("8. Delete bank account");
 							
 							String clientChoice = read("choice");
 							
@@ -77,11 +78,9 @@ public static void main(String[] args) throws ParseException {
 							
 							else if (clientChoice.equals("2")) { // create account
 								
-								//BankAccount account = CreateSavingsAccount.createAccount();
+								CreateBankAccountTransaction object = new CreateBankAccountTransaction();
 								
-								//clientLoggedIn.bankAccounts.add(account);
-								
-								
+								object.createNewBankAccount(clientLoggedIn.bankAccounts);	
 																
 							}
 							
@@ -98,19 +97,33 @@ public static void main(String[] args) throws ParseException {
 							
 							else if (clientChoice.equals("5")) {
 								
-								System.out.println("\n\n===Transfer Money===\n");
+								ChangeClientDetailsTransaction object = new ChangeClientDetailsTransaction();
 								
-								String withdrawAccountNum = read("withdrawal account number");	
-								String depositAccountNum = read("deposited account number");		
-								String amountToTransfer = read("amount to transfer");
-								
-								// checkTransactionStructure
-								
-								clientLoggedIn.makeTransfer(withdrawAccountNum, depositAccountNum, amountToTransfer);
-								
+								object.changeClientDetails(clientLoggedIn);
+
 							}
 							
-							else if (clientChoice.equals("6")) { // Book appointment
+							else if (clientChoice.equals("6")) {
+								
+								MakeTransferTransaction object = new MakeTransferTransaction();
+								
+								object.makeMoneyTransfer(clientLoggedIn);
+								
+								/*
+								 * System.out.println("\n\n===Transfer Money===\n");
+								 * 
+								 * String withdrawAccountNum = read("withdrawal account number"); String
+								 * depositAccountNum = read("deposited account number"); String amountToTransfer
+								 * = read("amount to transfer");
+								 * 
+								 * // checkTransactionStructure
+								 * 
+								 * clientLoggedIn.makeTransfer(withdrawAccountNum, depositAccountNum,
+								 * amountToTransfer);
+								 */
+							}
+							
+							else if (clientChoice.equals("7")) { // Book appointment
 								
 								System.out.println("\n\n===Book an appointment===\n");
 								
@@ -118,13 +131,18 @@ public static void main(String[] args) throws ParseException {
 								String employee = read("Employee's name you wish to book an appointment with");
 							}
 							
-							else if (clientChoice.equals("7")) { // Delete bank account
+							else if (clientChoice.equals("8")) { // Delete bank account
 								
-								System.out.println("\n\n===Delete a bank account===\n");
 								
-								String deleteAccountNum = read("account number to be deleted");	
+								DeleteBankAccountTransaction object = new DeleteBankAccountTransaction();
 								
-								clientLoggedIn.deleteBankAccount(deleteAccountNum);
+								object.deleteBankAccount(clientLoggedIn);
+								
+								//System.out.println("\n\n===Delete a bank account===\n");
+								
+								//String deleteAccountNum = read("account number to be deleted");	
+								
+								//clientLoggedIn.deleteBankAccount(deleteAccountNum);
 							}
 
 						}

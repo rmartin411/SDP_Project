@@ -1,4 +1,4 @@
-package NonPrincipledDesign;
+package SRP_FR3;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -31,9 +31,9 @@ public static void main(String[] args) throws ParseException {
 			
 			else if (choice.equals("1")) {
 				
-				BankClient client = RegisterBankClient.ProvideUserDetails();
+				RegisterClientTransaction object = new RegisterClientTransaction();
 				
-				bankClients.add(client);
+				object.registerNewClient(bankClients);
 			}
 			
 			else if (choice.equals("2")) {
@@ -77,11 +77,9 @@ public static void main(String[] args) throws ParseException {
 							
 							else if (clientChoice.equals("2")) { // create account
 								
-								//BankAccount account = CreateSavingsAccount.createAccount();
+								CreateBankAccountTransaction object = new CreateBankAccountTransaction();
 								
-								//clientLoggedIn.bankAccounts.add(account);
-								
-								
+								object.createNewBankAccount(clientLoggedIn.bankAccounts);	
 																
 							}
 							

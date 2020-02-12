@@ -1,4 +1,4 @@
-package NonPrincipledDesign;
+package AllFR_SRP;
 
 import java.io.BufferedReader;
 import java.io.File;

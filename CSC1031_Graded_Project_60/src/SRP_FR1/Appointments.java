@@ -1,0 +1,23 @@
+package SRP_FR1;
+
+import java.util.Date;
+
+public class Appointments {
+	
+	public Date appointmentDate;
+	public BankEmployee employee;
+	public BankClient client;
+	public String test;
+	
+	
+	public Appointments(Date appDate, BankEmployee emp, BankClient client) {
+		
+		this.appointmentDate = appDate;
+		this.employee = emp;
+		this.client = client;
+	}
+	
+	
+	
+
+}
