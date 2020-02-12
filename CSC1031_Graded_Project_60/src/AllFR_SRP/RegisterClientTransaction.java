@@ -15,9 +15,9 @@ import java.util.List;
 
 public class RegisterClientTransaction  {
 	
-	private String name;
-	private String address;
-	private String DoB;
+	/*
+	 * private String name; private String address; private String DoB;
+	 */
 	private String username;
 	private String password;
 	private String password2;
@@ -25,7 +25,7 @@ public class RegisterClientTransaction  {
 	
 	public void registerNewClient(List<BankClient> clients) throws ParseException {
 		
-		provideClientDetails();
+		provideRegistrationDetails();
 		
 		String error = checkTransactionStructure();
 		
@@ -35,16 +35,17 @@ public class RegisterClientTransaction  {
 		
 	}
 
-	private void provideClientDetails() {
+	private void provideRegistrationDetails() {
 		
 		System.out.println("\n\n===Client Registration===\n");
 		
 		StdInput object = new StdInput();
 
 		
-		name = object.read("name");	
-		address = object.read("address");		
-		DoB = object.read("date of birth (DD/MM/YYYY)");		
+		/*
+		 * name = object.read("name"); address = object.read("address"); DoB =
+		 * object.read("date of birth (DD/MM/YYYY)");
+		 */		
 		
 		username = object.read("username");
 		password = object.read("password");
@@ -56,7 +57,7 @@ public class RegisterClientTransaction  {
 
 	private String checkTransactionStructure() throws ParseException {
 		
-		if( name == null || address == null || DoB == null ) return "Error client transaction";
+		//if( name == null || address == null || DoB == null ) return "Error client transaction";
 
 		if( username == null || password == null ) return "Error profile transaction";
 
@@ -67,15 +68,15 @@ public class RegisterClientTransaction  {
 	
 	private void executeRegistrationTransaction(List<BankClient> clients) throws ParseException {
 		
-		BankClient client = new BankClient(name, address, new SimpleDateFormat("dd/MM/yyyy").parse(DoB), username, password);
+		BankClient client = new BankClient(username, password);
 		
 		clients.add( client );
 		
 	}
 
-	private void printErrorMessage(String message) {
+	private void printErrorMessage(String error) {
 
-	System.err.println( message );		
+	System.err.println( error );		
 	}
 			
 	/*

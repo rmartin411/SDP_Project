@@ -42,9 +42,7 @@ public static void main(String[] args) throws ParseException {
 				String passwordProvided = read("password");
 				
 				for (BankClient client : bankClients) {
-					
-					System.out.println(client.getName());
-					
+										
 					if (client.getUsername().equals(usernameProvided) && client.getpassword().equals(passwordProvided)){
 						
 						System.out.println("\nHello " + client.getName() + "\n\n");
@@ -109,50 +107,27 @@ public static void main(String[] args) throws ParseException {
 								
 								object.makeMoneyTransfer(clientLoggedIn);
 								
-								/*
-								 * System.out.println("\n\n===Transfer Money===\n");
-								 * 
-								 * String withdrawAccountNum = read("withdrawal account number"); String
-								 * depositAccountNum = read("deposited account number"); String amountToTransfer
-								 * = read("amount to transfer");
-								 * 
-								 * // checkTransactionStructure
-								 * 
-								 * clientLoggedIn.makeTransfer(withdrawAccountNum, depositAccountNum,
-								 * amountToTransfer);
-								 */
 							}
 							
 							else if (clientChoice.equals("7")) { // Book appointment
 								
-								System.out.println("\n\n===Book an appointment===\n");
+								BookAppointmentTransaction object = new BookAppointmentTransaction();
 								
-								String withdrawAccountNum = read("Date of appointment");	
-								String employee = read("Employee's name you wish to book an appointment with");
+								object.bookAppointmentTransaction(clientLoggedIn);
+								
 							}
 							
 							else if (clientChoice.equals("8")) { // Delete bank account
-								
 								
 								DeleteBankAccountTransaction object = new DeleteBankAccountTransaction();
 								
 								object.deleteBankAccount(clientLoggedIn);
 								
-								//System.out.println("\n\n===Delete a bank account===\n");
-								
-								//String deleteAccountNum = read("account number to be deleted");	
-								
-								//clientLoggedIn.deleteBankAccount(deleteAccountNum);
 							}
-
 						}
-						
 					}
-					
 				}
-				
 			}
-			
 		}
 	}
 		

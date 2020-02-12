@@ -45,12 +45,30 @@ public class BankClient extends User{
 		ScheduledAppointments = new ArrayList<Appointments>();
 		
 		
-		clientCount.incrementAndGet();
-
-		
-		
+		clientCount.incrementAndGet();	
 	}
 	
+	public BankClient(String username, String password) { // used on registration
+		// TODO Auto-generated constructor stub
+		
+		super("","", null); 
+		
+		this.clientID = getNextClientID();
+
+		this.username = username;
+		this.password = password;
+		
+		bankAccounts = new ArrayList<BankAccount>();
+		bookedAppointments = new ArrayList<Appointments>();
+		ScheduledAppointments = new ArrayList<Appointments>();
+		
+		clientCount.incrementAndGet();
+	}
+	
+	public BankClient(String name, String address, Date DoB) { // used on profile creation
+		super(name, address, DoB);
+	}
+
 	public int getNextClientID() {
 		int id = nextClientID;
 		nextClientID++;
@@ -177,6 +195,14 @@ public class BankClient extends User{
 			}	
 		}
 	}
+
+	public void setProfileDetails(String name, String address, Date DoB) {
+		this.name = name;
+		this.address = address;
+		this.DoB = DoB;
+	}
+
+
 	
 	
 
