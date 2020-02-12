@@ -14,6 +14,8 @@ public static void main(String[] args) throws ParseException {
 		
 		List<BankClient> bankClients = new ArrayList<>();
 		
+		StdInput input = new StdInput();
+		
 		while(true) {
 			print(bankClients);
 			
@@ -21,7 +23,7 @@ public static void main(String[] args) throws ParseException {
 			System.out.println("1. Register");
 			System.out.println("2. Login");
 			
-			String choice = read("choice");
+			String choice = input.read("choice");
 			
 			
 			if (choice.equals("0")) {
@@ -38,8 +40,8 @@ public static void main(String[] args) throws ParseException {
 			
 			else if (choice.equals("2")) {
 				
-				String usernameProvided = read("username");
-				String passwordProvided = read("password");
+				String usernameProvided = input.read("username");
+				String passwordProvided = input.read("password");
 				
 				for (BankClient client : bankClients) {
 										
@@ -61,7 +63,7 @@ public static void main(String[] args) throws ParseException {
 							System.out.println("7. Book appointment");
 							System.out.println("8. Delete bank account");
 							
-							String clientChoice = read("choice");
+							String clientChoice = input.read("choice");
 							
 							
 							if (clientChoice.equals("0")) {
@@ -71,7 +73,9 @@ public static void main(String[] args) throws ParseException {
 							
 							else if (clientChoice.equals("1")) {
 								
-								break;
+								CreateClientProfileTransaction object = new CreateClientProfileTransaction();
+								
+								object.createClientProfile(clientLoggedIn);
 							}
 							
 							else if (clientChoice.equals("2")) { // create account
@@ -132,27 +136,28 @@ public static void main(String[] args) throws ParseException {
 	}
 		
 
-	public static String read( String label ) {
-
-		System.out.println( "\nProvide your " + label + ":" );
-
-		System.out.println( ">" );
-
-
-		BufferedReader input = new BufferedReader( new InputStreamReader( System.in ) );
-
-		String value = null;
-
-		try {
-
-			value = input.readLine();
-		}
-
-		catch (IOException ex) { ex.printStackTrace(); }
-
-
-		return value;
-	}
+	/*
+	 * public static String read( String label ) {
+	 * 
+	 * System.out.println( "\nProvide your " + label + ":" );
+	 * 
+	 * System.out.println( ">" );
+	 * 
+	 * 
+	 * BufferedReader input = new BufferedReader( new InputStreamReader( System.in )
+	 * );
+	 * 
+	 * String value = null;
+	 * 
+	 * try {
+	 * 
+	 * value = input.readLine(); }
+	 * 
+	 * catch (IOException ex) { ex.printStackTrace(); }
+	 * 
+	 * 
+	 * return value; }
+	 */
 	
 	public static void print( List<BankClient> clients ) {
 

@@ -21,7 +21,6 @@ public class CreateClientProfileTransaction {
 	}
 
 	private void provideProfileDetails() {
-		// TODO Auto-generated method stub
 		
 		System.out.println("\n\n=== Client Profile Creation ===\n");
 		
@@ -30,8 +29,7 @@ public class CreateClientProfileTransaction {
 		name = object.read("name");	
 		address = object.read("address");		
 		DoB = object.read("date of birth (DD/MM/YYYY)");		
-		
-		
+	
 	}
 
 	private String checkTransactionStructure() {
@@ -47,7 +45,6 @@ public class CreateClientProfileTransaction {
 	}
 
 	private void executeCreateProfileTransaction(BankClient clientLoggedIn) throws ParseException {
-		// TODO Auto-generated method stub
 		clientLoggedIn.setProfileDetails(name, address, new SimpleDateFormat("dd/MM/yyyy").parse(DoB));
 	}
 
