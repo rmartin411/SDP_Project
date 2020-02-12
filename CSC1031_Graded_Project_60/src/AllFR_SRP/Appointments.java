@@ -7,7 +7,6 @@ public class Appointments {
 	public Date appointmentDate;
 	public BankEmployee employee;
 	public BankClient client;
-	public String test;
 	
 	
 	public Appointments(Date appDate, BankEmployee emp, BankClient client) {
