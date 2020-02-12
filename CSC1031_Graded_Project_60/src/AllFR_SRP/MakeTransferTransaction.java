@@ -1,6 +1,6 @@
 package AllFR_SRP;
 
-public class MakeTransferTransaction implements TransactionInterface {
+public class MakeTransferTransaction  {
 	
 	public String withdrawAccountNum;
 	public String depositAccountNum;

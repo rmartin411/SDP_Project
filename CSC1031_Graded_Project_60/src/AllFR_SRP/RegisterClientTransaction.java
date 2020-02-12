@@ -13,7 +13,7 @@ import java.util.List;
 
 
 
-public class RegisterClientTransaction implements TransactionInterface  {
+public class RegisterClientTransaction  {
 	
 	private String name;
 	private String address;

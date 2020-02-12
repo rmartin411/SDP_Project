@@ -8,7 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-public class ChangeClientDetailsTransaction implements TransactionInterface {
+public class ChangeClientDetailsTransaction {
 	
 	public String name;
 	public String address;

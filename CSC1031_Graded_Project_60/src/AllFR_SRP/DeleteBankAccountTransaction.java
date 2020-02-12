@@ -3,7 +3,7 @@ package AllFR_SRP;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DeleteBankAccountTransaction implements TransactionInterface  {
+public class DeleteBankAccountTransaction  {
 	
 	public String accountNumberProvided;
 	public BankClient client;

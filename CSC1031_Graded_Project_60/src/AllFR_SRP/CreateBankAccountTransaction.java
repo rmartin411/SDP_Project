@@ -4,7 +4,7 @@ import java.util.List;
 
 //import exampleGroupProject.principledDesign.principles.SRP.FR1_SRP.StdInput;
 
-public class CreateBankAccountTransaction implements TransactionInterface {
+public class CreateBankAccountTransaction {
 	
 	public String accountNumber;
 	public String accountType;
