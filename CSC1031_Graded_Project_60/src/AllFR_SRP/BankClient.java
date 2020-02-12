@@ -13,7 +13,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class BankClient extends User{
 	
 	public static final AtomicInteger clientCount = new AtomicInteger(0);
-	
+	public String test;
 	private static int nextClientID = 1;
 	
 	public int clientID;
