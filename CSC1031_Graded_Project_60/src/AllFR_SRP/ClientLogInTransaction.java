@@ -65,9 +65,6 @@ public class ClientLogInTransaction  {
 		
 		return clientLoggedIn;
 		
-		
-	
-
 	}
 	
 }
