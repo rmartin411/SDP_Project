@@ -57,6 +57,13 @@ public class BankEmployeeUI {
 					
 					toBeScheduledBookings.remove(object);
 					scheduledBookings.add(object);
+					
+					System.out.println("Appointment has been scheduled with " + object.client.name);
+				}
+				else {
+					toBeScheduledBookings.remove(object);
+					System.out.println("Appointment has not been scheduled with " + object.client.name);
+
 				}
 			}
 		}
