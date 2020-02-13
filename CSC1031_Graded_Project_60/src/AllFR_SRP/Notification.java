@@ -8,7 +8,7 @@ public class Notification {
 	public Date appointmentDate;
 	
 	
-	public Notification(BankClient client, Date date) {
+	public Notification(BankClient client, BankAdministrator admin, Date date) {
 		
 		this.appointmentClient = client;
 		this.appointmentDate = date;
