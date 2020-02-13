@@ -40,7 +40,7 @@ public class ClientLogInTransaction  {
 	
 	public String checkTransactionStructure() {
 		
-		if ( usernameProvided == null || passwordProvided == null) return "Error Login Transaction";
+		if ( usernameProvided.isEmpty() || passwordProvided.isEmpty()) return "Error Login Transaction";
 			
 		return null;
 	}
