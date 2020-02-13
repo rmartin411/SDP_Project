@@ -17,7 +17,7 @@ public static void main(String[] args) throws ParseException {
 		StdInput input = new StdInput();
 		
 		while(true) {
-			print(bankClients);
+			//print(bankClients);
 			
 			System.out.println("\n0. Exit");
 			System.out.println("1. Register");
@@ -43,6 +43,8 @@ public static void main(String[] args) throws ParseException {
 				ClientLogInTransaction object1 = new ClientLogInTransaction();
 					
 				BankClient clientLoggedIn = object1.clientLogin(bankClients);
+				
+				if (clientLoggedIn != null) {
 						
 						while(true) {
 							
@@ -57,7 +59,6 @@ public static void main(String[] args) throws ParseException {
 							System.out.println("8. Delete bank account");
 							
 							String clientChoice = input.read("choice");
-							
 							
 							if (clientChoice.equals("0")) {
 								
@@ -123,8 +124,10 @@ public static void main(String[] args) throws ParseException {
 							}
 						}
 					}
+				
 				}
 			}
+		}
 		
 	
 		
