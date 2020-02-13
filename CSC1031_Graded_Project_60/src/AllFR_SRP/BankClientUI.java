@@ -40,9 +40,9 @@ public static void main(String[] args) throws ParseException {
 			
 			else if (choice.equals("2")) {
 				
-				ClientLogInTransaction objectTrans = new ClientLogInTransaction();
+				ClientLogInTransaction object1 = new ClientLogInTransaction();
 					
-				BankClient clientLoggedIn = objectTrans.clientLogin(bankClients);
+				BankClient clientLoggedIn = object1.clientLogin(bankClients);
 						
 						while(true) {
 							

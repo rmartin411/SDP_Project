@@ -30,10 +30,10 @@ public class ClientLogInTransaction  {
 		
 		System.out.println("\n\n=== Client Log In ===\n");
 		
-		StdInput object = new StdInput();
+		StdInput object1 = new StdInput();
 		
-		usernameProvided = object.read("username");
-		passwordProvided = object.read("password");
+		usernameProvided = object1.read("username");
+		passwordProvided = object1.read("password");
 		
 	}
 	
