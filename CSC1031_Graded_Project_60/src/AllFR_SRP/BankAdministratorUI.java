@@ -10,8 +10,8 @@ public class BankAdministratorUI {
 	public static void main(String[] args) throws ParseException {
 		// TODO Auto-generated method stub
 		
-		List<Appointments> toBeScheduledBookings = new ArrayList<Appointments>();
-		List<Appointments> ScheduledBookings = new ArrayList<Appointments>();
+		List<BankAccount> toBeVerifiedAccounts = new ArrayList<BankAccount>();
+		List<BankAccount> VerifiedAccounts = new ArrayList<BankAccount>();
 
 		BankAdministrator admin = new BankAdministrator("Admin", "QUB", new SimpleDateFormat("dd/MM/yyy").parse("12/01/2001"));
 		
@@ -32,7 +32,7 @@ public class BankAdministratorUI {
 		client2.bankAccounts.add(account3);
 		
 		
-		Appointments appointment = new Appointments(new SimpleDateFormat("dd/MM/yyy").parse("12/01/2001"), admin, client1);
+		Notification notification = new Notification(client1, admin, new SimpleDateFormat("dd/MM/yyy").parse("12/01/2001"));
 		
 		
 		
