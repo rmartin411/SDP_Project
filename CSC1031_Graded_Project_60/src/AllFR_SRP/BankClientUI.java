@@ -40,16 +40,9 @@ public static void main(String[] args) throws ParseException {
 			
 			else if (choice.equals("2")) {
 				
-				String usernameProvided = input.read("username");
-				String passwordProvided = input.read("password");
-				
-				for (BankClient client : bankClients) {
-										
-					if (client.getUsername().equals(usernameProvided) && client.getpassword().equals(passwordProvided)){
-						
-						System.out.println("\nHello " + client.getName() + "\n\n");
-						
-						BankClient clientLoggedIn = client;
+				ClientLogInTransaction object1 = new ClientLogInTransaction();
+					
+				BankClient clientLoggedIn = object1.clientLogin(bankClients);
 						
 						while(true) {
 							
@@ -132,8 +125,8 @@ public static void main(String[] args) throws ParseException {
 					}
 				}
 			}
-		}
-	}
+		
+	
 		
 
 	/*
