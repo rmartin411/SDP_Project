@@ -32,45 +32,27 @@ public class BankEmployee extends User{
 	}
 	
 	
-	public static void main(String[] args) {
-		
-		
-	}
 	
 	public void notify(Appointment app) {
 		
-		
-		
-		
-		
 	}
 	
-	public static String read( String label ) {
-
-		System.out.println( "\nProvide your " + label + ":" );
-
-		System.out.println( ">" );
-
-
-		BufferedReader input = new BufferedReader( new InputStreamReader( System.in ) );
-
-		String value = null;
-
-		try {
-
-			value = input.readLine();
-		}
-
-		catch (IOException ex) { ex.printStackTrace(); }
-
-
-		return value;
-	}
-
 
 	@Override
 	public void print() {
 		// TODO Auto-generated method stub
+		System.out.println("Bank Employee Details:");
+		System.out.println("----------------------\n\n");
+		
+		System.out.println("Employee ID: " + employeeID);
+		System.out.println("Name: " + name);
+		System.out.println("Address: " + address);
+		System.out.println("Date of Birth: " + DoB.toGMTString());
+
+
+		
+
+		
 		
 	}
 	

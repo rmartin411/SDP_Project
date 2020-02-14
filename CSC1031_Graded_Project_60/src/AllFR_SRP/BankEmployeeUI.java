@@ -38,47 +38,56 @@ public class BankEmployeeUI {
 		
 		print(toBeScheduledBookings);
 		
+		
+		
 		System.out.println("\n\n== Bookings to be Schelduled ==\n");
 
 		
 		if (toBeScheduledBookings != null) {
 			
-			for (int app = 0; app < toBeScheduledBookings.size(); app++) {
+			for (int index = 0; index < toBeScheduledBookings.size(); index++) {
 				
-				Appointment object = toBeScheduledBookings.get(app);
+				ScheduleAppointmentTransaction schAppointment = new ScheduleAppointmentTransaction();
 				
-				StdInput input = new StdInput();
-				
-				String date = object.appointmentDate.toGMTString();
-				String emp = object.employee.name;
-				String cli = object.client.name;
-				
-				System.out.println("Appointment Details:");
-				System.out.println("-------------------- \n");
-
-				System.out.println("Client Name: " + cli);
-				System.out.println("Date: " + date);
-				System.out.println("Employee: " + emp + "\n\n");
-
+				schAppointment.scheduleAppointmentTransaction(index, toBeScheduledBookings, scheduledBookings );
 				
 				
-				System.out.println( "1. Book it" );
-				System.out.println( "2. Do not book it" );
-				 
-				String answer = input.read(" answer ");
 				
-				if (answer.equals("1")) {
-					
-					toBeScheduledBookings.remove(object);
-					scheduledBookings.add(object);
-					
-					System.out.println("Appointment has been scheduled with " + object.client.name);
-				}
-				else if (answer.equals("2")){
-					toBeScheduledBookings.remove(object);
-					System.out.println("Appointment has not been scheduled with " + object.client.name);
-
-				}
+				/*
+				 * Appointment object = toBeScheduledBookings.get(index);
+				 * 
+				 * StdInput input = new StdInput();
+				 * 
+				 * String date = object.appointmentDate.toGMTString(); String emp =
+				 * object.employee.name; String cli = object.client.name;
+				 * 
+				 * System.out.println("Appointment Details:");
+				 * System.out.println("-------------------- \n");
+				 * 
+				 * System.out.println("Client Name: " + cli); System.out.println("Date: " +
+				 * date); System.out.println("Employee: " + emp + "\n\n");
+				 * 
+				 * 
+				 * 
+				 * System.out.println( "1. Book it" ); System.out.println( "2. Do not book it"
+				 * );
+				 * 
+				 * String answer = input.read(" answer ");
+				 */
+				
+				/*
+				 * if (answer.equals("1")) {
+				 * 
+				 * toBeScheduledBookings.remove(object); scheduledBookings.add(object);
+				 * 
+				 * System.out.println("Appointment has been scheduled with " +
+				 * object.client.name); } else if (answer.equals("2")){
+				 * toBeScheduledBookings.remove(object);
+				 * System.out.println("Appointment has not been scheduled with " +
+				 * object.client.name);
+				 * 
+				 * }
+				 */
 			}
 		}
 		

@@ -183,8 +183,13 @@ public class BankClient extends User{
 	 * 
 	 * }
 	 */
-	public void toPrint() {
-
+	
+	@Override
+	public void print() {
+		
+		System.out.println("Bank Client Details:");
+		System.out.println("----------------------\n\n");
+		
 		System.out.println( "Client ID = " + clientID + ", Name = " + name + "\n\nAddress = " + address + ", Date of Birth = " + DoB + ", Username = " + username);
 
 		if (bankAccounts != null) {
@@ -202,11 +207,8 @@ public class BankClient extends User{
 		this.DoB = DoB;
 	}
 
-	@Override
-	public void print() {
-		// TODO Auto-generated method stub
-		
-	}
+	
+
 
 
 	

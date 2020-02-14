@@ -37,7 +37,7 @@ public class RegisterClientTransaction  {
 
 	private void provideRegistrationDetails() {
 		
-		System.out.println("\n\n===Client Registration===\n");
+		System.out.println("\n\n=== Client Registration ===\n");
 		
 		StdInput object = new StdInput();
 
@@ -72,6 +72,9 @@ public class RegisterClientTransaction  {
 		
 		clients.add( client );
 		
+		//CreateClientProfileTransaction profile = new CreateClientProfileTransaction();
+		//profile.createClientProfile(client);
+		
 	}
 
 	private void printErrorMessage(String error) {
@@ -79,26 +82,5 @@ public class RegisterClientTransaction  {
 	System.err.println( error );		
 	}
 			
-	/*
-	 * public static String read( String label ) {
-	 * 
-	 * System.out.println( "\nProvide your " + label + ":" );
-	 * 
-	 * System.out.println( ">" );
-	 * 
-	 * 
-	 * BufferedReader input = new BufferedReader( new InputStreamReader( System.in )
-	 * );
-	 * 
-	 * String value = null;
-	 * 
-	 * try {
-	 * 
-	 * value = input.readLine(); }
-	 * 
-	 * catch (IOException ex) { ex.printStackTrace(); }
-	 * 
-	 * 
-	 * return value; }
-	 */
+	
 }

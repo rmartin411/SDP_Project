@@ -36,6 +36,8 @@ public static void main(String[] args) throws ParseException {
 				RegisterClientTransaction object = new RegisterClientTransaction();
 				
 				object.registerNewClient(bankClients);
+				
+				
 			}
 			
 			else if (choice.equals("2")) {
@@ -82,12 +84,12 @@ public static void main(String[] args) throws ParseException {
 							
 							else if (clientChoice.equals("3")) {
 								
-								clientLoggedIn.toPrint();
+								clientLoggedIn.print();
 							}
 							
 							else if (clientChoice.equals("4")) {
 								
-								clientLoggedIn.toPrint();
+								clientLoggedIn.print();
 
 							}
 							
@@ -129,37 +131,11 @@ public static void main(String[] args) throws ParseException {
 			}
 		}
 		
-	
-		
-
-	/*
-	 * public static String read( String label ) {
-	 * 
-	 * System.out.println( "\nProvide your " + label + ":" );
-	 * 
-	 * System.out.println( ">" );
-	 * 
-	 * 
-	 * BufferedReader input = new BufferedReader( new InputStreamReader( System.in )
-	 * );
-	 * 
-	 * String value = null;
-	 * 
-	 * try {
-	 * 
-	 * value = input.readLine(); }
-	 * 
-	 * catch (IOException ex) { ex.printStackTrace(); }
-	 * 
-	 * 
-	 * return value; }
-	 */
-	
 	public static void print( List<BankClient> clients ) {
 
 		System.out.println( "Bank Clients:\n" );
 
-		for( int i = 0; clients != null && i < clients.size(); ++i ) clients.get( i ).toPrint();
+		for( int i = 0; clients != null && i < clients.size(); ++i ) clients.get( i ).print();
 	}
 
 }
