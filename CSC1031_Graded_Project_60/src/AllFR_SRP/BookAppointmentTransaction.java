@@ -39,6 +39,12 @@ public class BookAppointmentTransaction   {
 
 	public String checkTransactionStructure() {
 		// TODO Auto-generated method stub
+		
+		if (dateOfAppointment.isEmpty()) return "No date";
+		
+		if (nameOfEmployee.isEmpty()) return "No employee name provided";
+	
+		
 		return null;
 	}
 

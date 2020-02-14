@@ -13,5 +13,7 @@ public abstract class User {
 		this.address = address;
 		this.DoB = DoB;
 	}
+	
+	public abstract void print();
 
 }

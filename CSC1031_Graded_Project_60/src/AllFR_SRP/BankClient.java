@@ -202,6 +202,12 @@ public class BankClient extends User{
 		this.DoB = DoB;
 	}
 
+	@Override
+	public void print() {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 	
 	

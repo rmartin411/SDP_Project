@@ -66,6 +66,13 @@ public class BankEmployee extends User{
 
 		return value;
 	}
+
+
+	@Override
+	public void print() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 

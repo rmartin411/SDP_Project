@@ -28,6 +28,12 @@ public class BankAdministrator extends User{
 		nextAdminID++;
 		return id;
 	}
+
+	@Override
+	public void print() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 
