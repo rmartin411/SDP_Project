@@ -118,8 +118,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="14" language="java" name="AllFR_SRP.Appointments" project="CSC1031_Graded_Project_60" 
-    file="/CSC1031_Graded_Project_60/src/AllFR_SRP/Appointments.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="14" language="java" name="AllFR_SRP.Appointment" project="CSC1031_Graded_Project_60" 
+    file="/CSC1031_Graded_Project_60/src/AllFR_SRP/Appointment.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1683" y="1936"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      

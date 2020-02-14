@@ -23,8 +23,8 @@ public class BankClient extends User{
 	
 	public List<BankAccount>bankAccounts;
 	
-	public List<Appointments> bookedAppointments;
-	public List<Appointments> ScheduledAppointments;
+	public List<Appointment> bookedAppointments;
+	public List<Appointment> ScheduledAppointments;
 	
 	
 	// Constructor
@@ -41,8 +41,8 @@ public class BankClient extends User{
 		
 		bankAccounts = new ArrayList<BankAccount>();
 		
-		bookedAppointments = new ArrayList<Appointments>();
-		ScheduledAppointments = new ArrayList<Appointments>();
+		bookedAppointments = new ArrayList<Appointment>();
+		ScheduledAppointments = new ArrayList<Appointment>();
 		
 		
 		clientCount.incrementAndGet();	
@@ -59,8 +59,8 @@ public class BankClient extends User{
 		this.password = password;
 		
 		bankAccounts = new ArrayList<BankAccount>();
-		bookedAppointments = new ArrayList<Appointments>();
-		ScheduledAppointments = new ArrayList<Appointments>();
+		bookedAppointments = new ArrayList<Appointment>();
+		ScheduledAppointments = new ArrayList<Appointment>();
 		
 		clientCount.incrementAndGet();
 	}
@@ -117,7 +117,7 @@ public class BankClient extends User{
 	public void addAppointment(Date appointmentDate, BankEmployee Employee) {
 		if (appointmentDate != null & Employee != null) {
 			
-			Appointments appointment = new Appointments(appointmentDate, Employee, this);
+			Appointment appointment = new Appointment(appointmentDate, Employee, this, false);
 			
 			bookedAppointments.add(appointment);
 			

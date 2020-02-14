@@ -9,10 +9,10 @@ public class BankEmployeeUI {
 
 	public static void main(String[] args) throws ParseException {
 				
-		List<Appointments> toBeScheduledBookings = new ArrayList<Appointments>();
-		List<Appointments> scheduledBookings = new ArrayList<Appointments>();
+		List<Appointment> toBeScheduledBookings = new ArrayList<Appointment>();
+		List<Appointment> scheduledBookings = new ArrayList<Appointment>();
 
-		BankEmployee employee = new BankEmployee("Admin", "QUB", new SimpleDateFormat("dd/MM/yyy").parse("12/01/2001"));
+		BankEmployee employee = new BankEmployee("EmployeeName", "QUB", new SimpleDateFormat("dd/MM/yyy").parse("12/01/2001"));
 		
 		BankClient client1 = new BankClient("Ross Martin", "QUB", new SimpleDateFormat("dd/MM/yyy").parse("12/01/2001"), "username1", "password1");
 		BankClient client2 = new BankClient("Austin Martin", "BHS", new SimpleDateFormat("dd/MM/yyy").parse("22/08/2004"), "username1", "password1");
@@ -28,20 +28,24 @@ public class BankEmployeeUI {
 		client2.bankAccounts.add(account2);
 		client2.bankAccounts.add(account3);
 		
-		Appointments appointment = new Appointments(new SimpleDateFormat("dd/MM/yyy").parse("12/01/2001"), employee, client1);
+		Appointment appointment = new Appointment(new SimpleDateFormat("dd/MM/yyy").parse("12/01/2001"), employee, client1, false);
+		Appointment appointment2 = new Appointment(new SimpleDateFormat("dd/MM/yyy").parse("12/01/2001"), employee, client2, false);
+
 		
 		toBeScheduledBookings.add(appointment);
+		toBeScheduledBookings.add(appointment2);
+
 		
 		print(toBeScheduledBookings);
 		
-		System.out.println("\n\n==Bookings to be Schelduled==\n");
+		System.out.println("\n\n== Bookings to be Schelduled ==\n");
 
 		
 		if (toBeScheduledBookings != null) {
 			
 			for (int app = 0; app < toBeScheduledBookings.size(); app++) {
 				
-				Appointments object = toBeScheduledBookings.get(app);
+				Appointment object = toBeScheduledBookings.get(app);
 				
 				StdInput input = new StdInput();
 				
@@ -49,18 +53,28 @@ public class BankEmployeeUI {
 				String emp = object.employee.name;
 				String cli = object.client.name;
 				
-				System.out.println("Is " + emp + " available for an appointment on " + date + " with " + cli + " ?");
+				System.out.println("Appointment Details:");
+				System.out.println("-------------------- \n");
+
+				System.out.println("Client Name: " + cli);
+				System.out.println("Date: " + date);
+				System.out.println("Employee: " + emp + "\n\n");
+
+				
+				
+				System.out.println( "1. Book it" );
+				System.out.println( "2. Do not book it" );
 				 
 				String answer = input.read(" answer ");
 				
-				if (answer.equals("y")) {
+				if (answer.equals("1")) {
 					
 					toBeScheduledBookings.remove(object);
 					scheduledBookings.add(object);
 					
 					System.out.println("Appointment has been scheduled with " + object.client.name);
 				}
-				else {
+				else if (answer.equals("2")){
 					toBeScheduledBookings.remove(object);
 					System.out.println("Appointment has not been scheduled with " + object.client.name);
 
@@ -72,7 +86,7 @@ public class BankEmployeeUI {
 
 	}
 	
-	public static void print(List<Appointments> appointment) {
+	public static void print(List<Appointment> appointment) {
 		
 		for (int i = 0; i < appointment.size(); i ++) {
 			System.out.println(appointment.get(i).client.name);

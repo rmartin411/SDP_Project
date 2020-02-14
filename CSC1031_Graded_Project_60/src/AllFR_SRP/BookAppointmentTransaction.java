@@ -50,7 +50,7 @@ public class BookAppointmentTransaction   {
 	private void executeBookingTransaction(BankClient clientLoggedIn) throws ParseException {
 		// TODO Auto-generated method stub
 		
-		Appointments object = new Appointments(new SimpleDateFormat("dd/MM/yyyy").parse(dateOfAppointment), employee, clientLoggedIn);
+		Appointment object = new Appointment(new SimpleDateFormat("dd/MM/yyyy").parse(dateOfAppointment), employee, clientLoggedIn, false);
 		
 		employee.appointments.add(object);
 		

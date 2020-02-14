@@ -13,7 +13,7 @@ public class BankEmployee extends User{
 	private static int nextEmployeeID = 1;
 	
 	public int employeeID;
-	public List<Appointments> appointments;
+	public List<Appointment> appointments;
 	
 	
 	public BankEmployee(String name, String address, Date DoB) {
@@ -21,7 +21,7 @@ public class BankEmployee extends User{
 		// TODO Auto-generated constructor stub
 		
 		this.employeeID = getNextEmployeeID();
-		appointments = new ArrayList<Appointments>();
+		appointments = new ArrayList<Appointment>();
 	}
 	
 	
@@ -37,7 +37,7 @@ public class BankEmployee extends User{
 		
 	}
 	
-	public void notify(Appointments app) {
+	public void notify(Appointment app) {
 		
 		
 		

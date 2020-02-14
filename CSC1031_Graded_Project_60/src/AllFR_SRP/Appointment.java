@@ -2,18 +2,21 @@ package AllFR_SRP;
 
 import java.util.Date;
 
-public class Appointments {
+public class Appointment {
 	
 	public Date appointmentDate;
 	public BankEmployee employee;
 	public BankClient client;
+	public Boolean scheduled;
 	
 	
-	public Appointments(Date appDate, BankEmployee emp, BankClient client) {
+	public Appointment(Date appDate, BankEmployee emp, BankClient client, Boolean scheculded) {
 		
 		this.appointmentDate = appDate;
 		this.employee = emp;
 		this.client = client;
+		
+		this.scheduled = false;
 	}
 	
 	
