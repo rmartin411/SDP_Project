@@ -36,16 +36,26 @@ public class DeleteBankAccountTransaction  {
 	public String checkTransactionStructure() {
 		// TODO Auto-generated method stub
 		
-		for(int account = 0; account< client.bankAccounts.size(); account++) { // get index of account to be deleted
+		String status = "";
+		int count = 0;
+		
+		for(int account = 0; account < client.bankAccounts.size(); account++) { // get index of account to be deleted
+			
 			if (client.bankAccounts.get(account).accountNumber.equals(accountNumberProvided)) {
-				return null;
+				status = null;
+				return status;
 			}
-			else {
-				return "No account found";
-			}
+			
+			count++;
 		}
 		
-		return null;
+		if (count == client.bankAccounts.size() - 1) {
+			status = "No account Found";
+			return status;
+		}
+		
+		return status;
+		
 	}
 
 	public void printErrorMessage(String error) {
