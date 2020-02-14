@@ -59,7 +59,7 @@ public class RegisterClientTransaction  {
 		
 		//if( name == null || address == null || DoB == null ) return "Error client transaction";
 
-		if( username == null || password == null ) return "Error profile transaction";
+		if( username.isEmpty() || password.isEmpty() ) return "Error profile transaction";
 
 		if (password.equals(password2) == false) return "Error password mismatch";
 
