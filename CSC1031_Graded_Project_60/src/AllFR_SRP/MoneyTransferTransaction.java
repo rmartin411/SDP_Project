@@ -1,6 +1,6 @@
 package AllFR_SRP;
 
-public class MakeTransferTransaction  {
+public class MoneyTransferTransaction  {
 	
 	public String withdrawAccountNum;
 	public String depositAccountNum;

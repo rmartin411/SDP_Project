@@ -103,7 +103,7 @@ public static void main(String[] args) throws ParseException {
 							
 							else if (clientChoice.equals("6")) {
 								
-								MakeTransferTransaction object = new MakeTransferTransaction();
+								MoneyTransferTransaction object = new MoneyTransferTransaction();
 								
 								object.makeMoneyTransfer(clientLoggedIn);
 								
