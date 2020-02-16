@@ -64,6 +64,8 @@ public class ScheduleAppointmentTransaction {
 			toBeScheduledBookings.remove(app);
 			scheduledBookings.add(app);
 			
+			app.setScheduled(true);
+			
 			System.out.println("Appointment has been scheduled with " + app.client.name);
 		}
 		

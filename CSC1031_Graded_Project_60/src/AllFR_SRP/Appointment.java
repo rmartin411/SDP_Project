@@ -19,6 +19,9 @@ public class Appointment {
 		this.scheduled = false;
 	}
 	
+	public void setScheduled(boolean value) {
+		this.scheduled = value;
+	}
 	
 	
 
