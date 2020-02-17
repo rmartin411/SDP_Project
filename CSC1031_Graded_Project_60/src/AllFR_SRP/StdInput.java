@@ -1,5 +1,8 @@
 package AllFR_SRP;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 
@@ -8,7 +11,7 @@ public class StdInput {
 	@SuppressWarnings("resource")
 	public String read( String label ) {
 
-		/*System.out.println( "\nProvide " + label + ":" );
+		System.out.println( "\nProvide " + label + ":" );
 
 		System.out.println( ">" );
 
@@ -21,19 +24,20 @@ public class StdInput {
 			value = input.readLine();
 		}
 
-		catch( IOException ex ) { ex.printStackTrace(); }*/
+		catch( IOException ex ) { ex.printStackTrace(); }
 
 
-		System.out.println( "\nProvide " + label + ":" );
-
-		System.out.println( ">" );
-
-		Scanner scanner = new Scanner( System.in );
-
-	    String value = scanner.nextLine();
-
-	    //scanner.close();
-
+		/*
+		 * System.out.println( "\nProvide " + label + ":" );
+		 * 
+		 * System.out.println( ">" );
+		 * 
+		 * Scanner scanner = new Scanner( System.in );
+		 * 
+		 * String value = scanner.nextLine();
+		 * 
+		 * //scanner.close();
+		 */
 
 	    return value;
 	}

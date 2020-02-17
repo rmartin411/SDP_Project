@@ -3,15 +3,13 @@ package AllFR_SRP;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class BankAccount {
+public class BankAccount { // should this be abstract 
 	
 	public static final AtomicInteger accountNum = new AtomicInteger(0);
 
 	public int accountNumber;
 	public String accountType;
 	public double accountBalance;
-	
-
 	
 	public boolean verified;
 	
