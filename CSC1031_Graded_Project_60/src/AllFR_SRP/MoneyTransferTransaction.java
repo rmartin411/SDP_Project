@@ -47,7 +47,7 @@ public class MoneyTransferTransaction  {
 		
 		for (int wAccount = 0; wAccount < client.bankAccounts.size(); wAccount++) {
 			
-			if (client.bankAccounts.get(wAccount).accountNumber.equals(withdrawAccountNum)) { // check account belongs to client
+			if (client.bankAccounts.get(wAccount).accountNumber == Integer.parseInt(withdrawAccountNum)) { // check account belongs to client
 				
 				withdrawAccountIndex = wAccount;
 				double balance = client.bankAccounts.get(wAccount).accountBalance; // get the balance of withdrawal account
@@ -56,7 +56,7 @@ public class MoneyTransferTransaction  {
 					
 					for (int dAccount = 0; dAccount < client.bankAccounts.size(); dAccount++) {
 						
-						if (client.bankAccounts.get(wAccount).accountNumber.equals(depositAccountNum)) { // check deposit account belongs to user 
+						if (client.bankAccounts.get(wAccount).accountNumber== Integer.parseInt(depositAccountNum)) { // check deposit account belongs to user 
 								
 							depositAccountIndex = dAccount;
 							return null;

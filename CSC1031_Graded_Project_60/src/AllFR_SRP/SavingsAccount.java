@@ -2,8 +2,8 @@ package AllFR_SRP;
 
 public class SavingsAccount extends BankAccount{
 
-	public SavingsAccount(String accountNum, String accountType, double balance) {
-		super(accountNum, accountType, balance);
+	public SavingsAccount(String accountType, double balance) {
+		super(accountType, balance);
 		// TODO Auto-generated constructor stub
 	}
 

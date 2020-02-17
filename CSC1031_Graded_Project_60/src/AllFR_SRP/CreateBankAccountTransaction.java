@@ -4,7 +4,6 @@ import java.util.List;
 
 public class CreateBankAccountTransaction {
 	
-	public String accountNumber;
 	public String accountType;
 	public double accountBalance;
 	
@@ -34,15 +33,12 @@ public class CreateBankAccountTransaction {
 
 		StdInput object = new StdInput();
 		
-		accountNumber = object.read(" account number");
 		accountType = object.read("account type");
 		accountBalanceStr = object.read("account balance");
 	}
 	
 	
 	public String checkTransactionStructure() {
-
-		if( accountNumber == null || accountNumber.matches("[0-9]+") == false) return "Error account number";
 
 		if( accountType == null || (accountType.equals("savings") == false && accountType.equals("primary") == false)) return "Error account type";
 
@@ -68,10 +64,10 @@ public class CreateBankAccountTransaction {
 		BankAccount account = null;
 		
 		if (accountType.equals("primary")) {
-			account = new PrimaryAccount(accountNumber, accountType, accountBalance);
+			account = new PrimaryAccount(accountType, accountBalance);
 		}
 		else {
-			account = new SavingsAccount(accountNumber, accountType, accountBalance);
+			account = new SavingsAccount(accountType, accountBalance);
 		}
 		
 		accounts.add(account);

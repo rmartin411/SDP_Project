@@ -41,7 +41,7 @@ public class DeleteBankAccountTransaction  {
 		
 		for(int account = 0; account < client.bankAccounts.size(); account++) { // get index of account to be deleted
 			
-			if (client.bankAccounts.get(account).accountNumber.equals(accountNumberProvided)) {
+			if (client.bankAccounts.get(account).accountNumber == Integer.parseInt(accountNumberProvided)) {
 				status = null;
 				return status;
 			}
@@ -70,7 +70,7 @@ public class DeleteBankAccountTransaction  {
 		int index = 0;
 		
 		for(int account = 0; account< clientLoggedIn.bankAccounts.size(); account++) { // get index of account to be deleted
-			if (clientLoggedIn.bankAccounts.get(account).accountNumber.equals(accountNumberProvided)) {
+			if (clientLoggedIn.bankAccounts.get(account).accountNumber == Integer.parseInt(accountNumberProvided)) {
 				index = account;
 			}
 		}
