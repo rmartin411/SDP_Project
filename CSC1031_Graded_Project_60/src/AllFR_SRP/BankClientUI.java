@@ -19,12 +19,13 @@ public static void main(String[] args) throws ParseException {
 		while(true) {
 			//print(bankClients);
 			
+			System.out.println("== Welcome to the Bank App ==");
+			
 			System.out.println("\n0. Exit");
 			System.out.println("1. Register");
 			System.out.println("2. Login");
-			
+	
 			String choice = input.read("choice");
-			
 			
 			if (choice.equals("0")) {
 				
@@ -34,9 +35,27 @@ public static void main(String[] args) throws ParseException {
 			else if (choice.equals("1")) {
 				
 				RegisterClientTransaction object = new RegisterClientTransaction();
-				
 				object.registerNewClient(bankClients);
 				
+				CreateClientProfileTransaction objectCreateProfile = new CreateClientProfileTransaction();
+				objectCreateProfile.createClientProfile(bankClients.get(bankClients.size()-1)); // the last user registered is the user is the last user in the list of bankCLients.
+				
+				do {
+					
+					CreateBankAccountTransaction objectCreateBankAccount = new CreateBankAccountTransaction();
+					objectCreateBankAccount.createNewBankAccount(bankClients.get(bankClients.size()-1).bankAccounts);	
+					
+					System.out.println("Would you like to add another account");
+					
+					String accountChoice = input.read("choice");
+					
+					if (accountChoice.equals("n")) {
+						break;
+					}
+					
+				}
+				
+				while(true);
 				
 			}
 			
@@ -47,18 +66,20 @@ public static void main(String[] args) throws ParseException {
 				BankClient clientLoggedIn = object1.clientLogin(bankClients);
 				
 				if (clientLoggedIn != null) {
+					
+					clientLoggedIn.print();
 						
 						while(true) {
 							
 							System.out.println("\n0. Log out");
-							System.out.println("1. Create profile");
-							System.out.println("2. Create bank account");
-							System.out.println("3. View account details");
-							System.out.println("4. View profile details");
-							System.out.println("5. Change profile details");
-							System.out.println("6. Transfer money");
-							System.out.println("7. Book appointment");
-							System.out.println("8. Delete bank account");
+							System.out.println("1. Change Bank Account Details");
+							System.out.println("2. Delete Bank Account");
+							System.out.println("3. Money Transfer");
+							System.out.println("4. Book Appointment");
+							//System.out.println("5. Change profile details");
+							//System.out.println("6. Transfer money");
+							//System.out.println("7. Book appointment");
+							//System.out.println("8. Delete bank account");
 							
 							String clientChoice = input.read("choice");
 							
@@ -67,66 +88,73 @@ public static void main(String[] args) throws ParseException {
 								break;
 							} 
 							
-							else if (clientChoice.equals("1")) {
-								
-								CreateClientProfileTransaction object = new CreateClientProfileTransaction();
-								
-								object.createClientProfile(clientLoggedIn);
-							}
-							
-							else if (clientChoice.equals("2")) { // create account
-								
-								CreateBankAccountTransaction object = new CreateBankAccountTransaction();
-								
-								object.createNewBankAccount(clientLoggedIn.bankAccounts);	
-																
-							}
-							
-							else if (clientChoice.equals("3")) {
-								
-								clientLoggedIn.print();
-							}
-							
-							else if (clientChoice.equals("4")) {
-								
-								clientLoggedIn.print();
-
-							}
-							
-							else if (clientChoice.equals("5")) {
+							else if (clientChoice.equals("1")) { // Change client details
 								
 								ChangeClientDetailsTransaction object = new ChangeClientDetailsTransaction();
-								
 								object.changeClientDetails(clientLoggedIn);
+								
+							}
+							
+							else if (clientChoice.equals("2")) { // delete bank account
+								
+								DeleteBankAccountTransaction object = new DeleteBankAccountTransaction();
+								object.deleteBankAccount(clientLoggedIn);
+													
+							}
+							
+							else if (clientChoice.equals("3")) { // Money Transfer
+								
+								MoneyTransferTransaction object = new MoneyTransferTransaction();
+								object.makeMoneyTransfer(clientLoggedIn);
+								
+								//clientLoggedIn.print();
+							}
+							
+							else if (clientChoice.equals("4")) { //Book Appointment
+								
+								BookAppointmentTransaction object = new BookAppointmentTransaction();
+								object.bookAppointmentTransaction(clientLoggedIn);
+								
+								//clientLoggedIn.print();
 
 							}
 							
-							else if (clientChoice.equals("6")) {
-								
-								MoneyTransferTransaction object = new MoneyTransferTransaction();
-								
-								object.makeMoneyTransfer(clientLoggedIn);
-								
-							}
+						/*
+						 * else if (clientChoice.equals("5")) {
+						 * 
+						 * ChangeClientDetailsTransaction object = new ChangeClientDetailsTransaction();
+						 * 
+						 * object.changeClientDetails(clientLoggedIn);
+						 * 
+						 * }
+						 * 
+						 * else if (clientChoice.equals("6")) {
+						 * 
+						 * MoneyTransferTransaction object = new MoneyTransferTransaction();
+						 * 
+						 * object.makeMoneyTransfer(clientLoggedIn);
+						 * 
+						 * }
+						 * 
+						 * else if (clientChoice.equals("7")) { // Book appointment
+						 * 
+						 * BookAppointmentTransaction object = new BookAppointmentTransaction();
+						 * 
+						 * object.bookAppointmentTransaction(clientLoggedIn);
+						 * 
+						 * }
+						 * 
+						 * else if (clientChoice.equals("8")) { // Delete bank account
+						 * 
+						 * DeleteBankAccountTransaction object = new DeleteBankAccountTransaction();
+						 * 
+						 * object.deleteBankAccount(clientLoggedIn);
+						 * 
+						 * }
+						 */
 							
-							else if (clientChoice.equals("7")) { // Book appointment
-								
-								BookAppointmentTransaction object = new BookAppointmentTransaction();
-								
-								object.bookAppointmentTransaction(clientLoggedIn);
-								
-							}
-							
-							else if (clientChoice.equals("8")) { // Delete bank account
-								
-								DeleteBankAccountTransaction object = new DeleteBankAccountTransaction();
-								
-								object.deleteBankAccount(clientLoggedIn);
-								
-							}
 						}
 					}
-				
 				}
 			}
 		}
