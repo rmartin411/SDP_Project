@@ -12,7 +12,7 @@ public class BankEmployeeUI {
 		List<Appointment> toBeScheduledBookings = new ArrayList<Appointment>();
 		List<Appointment> scheduledBookings = new ArrayList<Appointment>();
 
-		BankEmployee employee = new BankEmployee("EmployeeName", "QUB", new SimpleDateFormat("dd/MM/yyy").parse("12/01/2001"));
+		BankEmployee employee = new BankEmployee("EmployeeName");
 		
 		BankClient client1 = new BankClient("Ross Martin", "QUB", new SimpleDateFormat("dd/MM/yyy").parse("12/01/2001"), "username1", "password1");
 		BankClient client2 = new BankClient("Austin Martin", "BHS", new SimpleDateFormat("dd/MM/yyy").parse("22/08/2004"), "username1", "password1");

@@ -13,8 +13,7 @@ public class BankAdministratorUI {
 		  List<BankAccount> toBeVerifiedAccounts = new ArrayList<BankAccount>();
 		  List<BankAccount> VerifiedAccounts = new ArrayList<BankAccount>();
 		  
-		  BankAdministrator admin = new BankAdministrator("Admin", "QUB", new
-		  SimpleDateFormat("dd/MM/yyy").parse("12/01/2001"));
+		  BankAdministrator admin = new BankAdministrator("Admin");
 		  
 		  BankClient client1 = new BankClient("Ross Martin", "QUB", new
 		  SimpleDateFormat("dd/MM/yyy").parse("12/01/2001"), "username1", "password1");

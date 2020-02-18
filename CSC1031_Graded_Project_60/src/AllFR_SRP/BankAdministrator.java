@@ -15,8 +15,8 @@ public class BankAdministrator extends User{
 	public List<BankAccount> clientBankAccountToVerify;
 	public List<BankClient> ClientProfileToVerify;
 	
-	public BankAdministrator(String name, String address, Date DoB) {
-		super(name, address, DoB);
+	public BankAdministrator(String name) {
+		super(name);
 		
 		this.AdminID = getNextAdminID();
 		

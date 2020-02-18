@@ -16,8 +16,8 @@ public class BankEmployee extends User{
 	public List<Appointment> appointments;
 	
 	
-	public BankEmployee(String name, String address, Date DoB) {
-		super(name, address, DoB);
+	public BankEmployee(String name) {
+		super(name);
 		// TODO Auto-generated constructor stub
 		
 		this.employeeID = getNextEmployeeID();
@@ -46,13 +46,6 @@ public class BankEmployee extends User{
 		
 		System.out.println("Employee ID: " + employeeID);
 		System.out.println("Name: " + name);
-		System.out.println("Address: " + address);
-		System.out.println("Date of Birth: " + DoB.toGMTString());
-
-
-		
-
-		
 		
 	}
 	

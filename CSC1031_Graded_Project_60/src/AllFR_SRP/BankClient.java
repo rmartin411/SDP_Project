@@ -21,6 +21,9 @@ public class BankClient extends User{
 	public String username;
 	public String password;
 	
+	public String address;
+	public Date DoB;
+	
 	public List<BankAccount>bankAccounts;
 	
 	public List<Appointment> bookedAppointments;
@@ -30,12 +33,12 @@ public class BankClient extends User{
 	// Constructor
 	public BankClient(String name, String address, Date DoB, String username, String password) {
 		
-		super(name, address, DoB);
+		super(name);
 		
 		this.clientID = getNextClientID();
 		//this.name = name;
-		//this.address = address;
-		//this.DoB = DoB;
+		this.address = address;
+		this.DoB = DoB;
 		this.username = username;
 		this.password = password;
 		
@@ -51,7 +54,7 @@ public class BankClient extends User{
 	public BankClient(String username, String password) { // used on registration
 		// TODO Auto-generated constructor stub
 		
-		super("","", null); 
+		super("");
 		
 		this.clientID = getNextClientID();
 
@@ -66,7 +69,10 @@ public class BankClient extends User{
 	}
 	
 	public BankClient(String name, String address, Date DoB) { // used on profile creation
-		super(name, address, DoB);
+		super(name);
+		
+		this.address = address;
+		this.DoB = DoB;
 	}
 
 	public int getNextClientID() {
