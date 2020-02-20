@@ -10,47 +10,55 @@ public class BankAdministratorUI {
 	public static void main(String[] args) throws ParseException {
 		// TODO Auto-generated method stub
 		
-		List<Notification> notifications = new ArrayList<Notification>();
+		List<Notification> listOfNotifications = new ArrayList<Notification>();
 	
-		  List<BankAccount> toBeVerifiedAccounts = new ArrayList<BankAccount>();
-		  List<BankAccount> VerifiedAccounts = new ArrayList<BankAccount>();
+		List<BankAccount> toBeVerifiedAccounts = new ArrayList<BankAccount>();
+		List<BankAccount> VerifiedAccounts = new ArrayList<BankAccount>();
 		  
-		  BankAdministrator admin = new BankAdministrator("Admin");
+		BankAdministrator admin = new BankAdministrator("Admin");
 		  
-		  BankClient client1 = new BankClient("Ross Martin", "QUB", new
-		  SimpleDateFormat("dd/MM/yyy").parse("12/01/2001"), "username1", "password1");
-		  BankClient client2 = new BankClient("Austin Martin", "BHS", new
+		BankClient client1 = new BankClient("Ross Martin", "QUB", new
+				SimpleDateFormat("dd/MM/yyy").parse("12/01/2001"), "username1", "password1");
+		BankClient client2 = new BankClient("Austin Martin", "BHS", new
 		  SimpleDateFormat("dd/MM/yyy").parse("22/08/2004"), "username1", "password1");
 		  
-		  BankAccount account = new PrimaryAccount("primary", 1234.56);
-		  BankAccount account1 = new SavingsAccount("savings", 6543.21);
-		  BankAccount account2 = new PrimaryAccount("primary", 0.21);
-		  BankAccount account3 = new SavingsAccount("savings", 0.0);
+		BankAccount account = new PrimaryAccount("primary", 1234.56);
+		BankAccount account1 = new SavingsAccount("savings", 6543.21);
+		BankAccount account2 = new PrimaryAccount("primary", 0.21);
+		BankAccount account3 = new SavingsAccount("savings", 0.0);
 		  
-		  client1.bankAccounts.add(account); 
-		  toBeVerifiedAccounts.add(account);
+		client1.bankAccounts.add(account); 
+		toBeVerifiedAccounts.add(account);
 		  
-		  client1.bankAccounts.add(account1);
-		  toBeVerifiedAccounts.add(account1);
+		client1.bankAccounts.add(account1);
+		toBeVerifiedAccounts.add(account1);
 		  
-		  client2.bankAccounts.add(account2); 
-		  toBeVerifiedAccounts.add(account2);
+		client2.bankAccounts.add(account2); 
+		toBeVerifiedAccounts.add(account2);
 		  
-		  client2.bankAccounts.add(account3);
-		  toBeVerifiedAccounts.add(account3);		  
+		client2.bankAccounts.add(account3);
+		toBeVerifiedAccounts.add(account3);		  
 		  
-		  Notification notification = new Notification(client1, admin, new SimpleDateFormat("dd/MM/yyy").parse("12/01/2001"));
+		Notification notification = new Notification(client1, account);
+		Notification notification1 = new Notification(client1, account1);
+		Notification notification2 = new Notification(client2, account2);
+		Notification notification3 = new Notification(client2, account3);
 		  
-		  System.out.println("\n\n== Accounts to be Verified ==\n");
+		  
+		listOfNotifications.add(notification);
+		listOfNotifications.add(notification1);
+		listOfNotifications.add(notification2);
+		listOfNotifications.add(notification3);
+		  
+		System.out.println("\n\n== Accounts to be Verified ==\n");
 			
-			if (toBeVerifiedAccounts != null) {
-				for (int index = 0; index < toBeVerifiedAccounts.size(); index++) {
+		if (toBeVerifiedAccounts != null) {
+			for (int index = 0; index < toBeVerifiedAccounts.size(); index++) {
 					
-					VerifyAccountTransaction verAccount = new VerifyAccountTransaction();
-					verAccount.verifyAccountTransaction(index, toBeVerifiedAccounts, VerifiedAccounts );
-				}
+				VerifyAccountTransaction verAccount = new VerifyAccountTransaction();
+				verAccount.verifyAccountTransaction(index, toBeVerifiedAccounts, VerifiedAccounts );
 			}
-		  
+		} 
 	}
 
 }
