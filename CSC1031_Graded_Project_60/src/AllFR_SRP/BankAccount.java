@@ -3,7 +3,7 @@ package AllFR_SRP;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class BankAccount { // should this be abstract 
+public abstract class BankAccount { // should this be abstract 
 	
 	public static final AtomicInteger accountNum = new AtomicInteger(0);
 

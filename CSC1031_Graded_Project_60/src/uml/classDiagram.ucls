@@ -3,7 +3,7 @@
   associations="true" dependencies="true" nesting-relationships="true" router="FAN">  
   <class id="1" language="java" name="AllFR_SRP.Notification" project="CSC1031_Graded_Project_60" 
     file="/CSC1031_Graded_Project_60/src/AllFR_SRP/Notification.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="101" width="281" x="2257" y="810"/>    
+    <position height="-1" width="-1" x="633" y="1233"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -12,7 +12,7 @@
   </class>  
   <class id="2" language="java" name="AllFR_SRP.BookAppointmentTransaction" project="CSC1031_Graded_Project_60" 
     file="/CSC1031_Graded_Project_60/src/AllFR_SRP/BookAppointmentTransaction.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="227" width="274" x="2815" y="810"/>    
+    <position height="-1" width="-1" x="797" y="978"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -21,7 +21,7 @@
   </class>  
   <class id="3" language="java" name="AllFR_SRP.User" project="CSC1031_Graded_Project_60" 
     file="/CSC1031_Graded_Project_60/src/AllFR_SRP/User.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="155" width="155" x="2620" y="810"/>    
+    <position height="119" width="97" x="1251" y="799"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -30,7 +30,7 @@
   </class>  
   <class id="4" language="java" name="AllFR_SRP.BankClient" project="CSC1031_Graded_Project_60" 
     file="/CSC1031_Graded_Project_60/src/AllFR_SRP/BankClient.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="407" width="328" x="2217" y="1113"/>    
+    <position height="443" width="328" x="1379" y="1102"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -39,7 +39,7 @@
   </class>  
   <class id="5" language="java" name="AllFR_SRP.SavingsAccount" project="CSC1031_Graded_Project_60" 
     file="/CSC1031_Graded_Project_60/src/AllFR_SRP/SavingsAccount.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="83" width="191" x="272" y="1791"/>    
+    <position height="-1" width="-1" x="3345" y="1847"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -48,7 +48,7 @@
   </class>  
   <class id="6" language="java" name="AllFR_SRP.ClientLogInTransaction" project="CSC1031_Graded_Project_60" 
     file="/CSC1031_Graded_Project_60/src/AllFR_SRP/ClientLogInTransaction.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="209" width="352" x="1823" y="810"/>    
+    <position height="209" width="352" x="2100" y="799"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -57,7 +57,7 @@
   </class>  
   <class id="7" language="java" name="AllFR_SRP.Appointment" project="CSC1031_Graded_Project_60" 
     file="/CSC1031_Graded_Project_60/src/AllFR_SRP/Appointment.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="155" width="320" x="3110" y="1560"/>    
+    <position height="-1" width="-1" x="1198" y="1796"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -66,7 +66,7 @@
   </class>  
   <class id="8" language="java" name="AllFR_SRP.StdInput" project="CSC1031_Graded_Project_60" 
     file="/CSC1031_Graded_Project_60/src/AllFR_SRP/StdInput.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="101" width="125" x="1464" y="1113"/>    
+    <position height="-1" width="-1" x="2561" y="244"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -75,7 +75,7 @@
   </class>  
   <class id="9" language="java" name="AllFR_SRP.ListPrint" project="CSC1031_Graded_Project_60" 
     file="/CSC1031_Graded_Project_60/src/AllFR_SRP/ListPrint.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="83" width="97" x="518" y="294"/>    
+    <position height="83" width="97" x="854" y="442"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -85,7 +85,7 @@
   <class id="10" language="java" name="AllFR_SRP.ChangeClientDetailsTransaction" project="CSC1031_Graded_Project_60" 
     file="/CSC1031_Graded_Project_60/src/AllFR_SRP/ChangeClientDetailsTransaction.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="317" width="332" x="2196" y="453"/>    
+    <position height="317" width="332" x="1251" y="442"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -95,7 +95,7 @@
   <class id="11" language="java" name="AllFR_SRP.DeleteBankAccountTransaction" project="CSC1031_Graded_Project_60" 
     file="/CSC1031_Graded_Project_60/src/AllFR_SRP/DeleteBankAccountTransaction.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="191" width="300" x="450" y="810"/>    
+    <position height="191" width="300" x="2534" y="799"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -104,327 +104,252 @@
   </class>  
   <class id="12" language="java" name="AllFR_SRP.PrimaryAccount" project="CSC1031_Graded_Project_60" 
     file="/CSC1031_Graded_Project_60/src/AllFR_SRP/PrimaryAccount.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="83" width="190" x="42" y="1791"/>    
+    <position height="-1" width="-1" x="3504" y="1687"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="13" language="java" name="AllFR_SRP.BankClientUI" project="CSC1031_Graded_Project_60" 
-    file="/CSC1031_Graded_Project_60/src/AllFR_SRP/BankClientUI.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="119" width="174" x="1132" y="294"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="14" language="java" name="AllFR_SRP.CreateClientProfileTransaction" project="CSC1031_Graded_Project_60" 
+  <class id="13" language="java" name="AllFR_SRP.CreateClientProfileTransaction" project="CSC1031_Graded_Project_60" 
     file="/CSC1031_Graded_Project_60/src/AllFR_SRP/CreateClientProfileTransaction.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="227" width="292" x="1132" y="810"/>    
+    <position height="227" width="292" x="1768" y="799"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="15" language="java" name="AllFR_SRP.CreateBankAccountTransaction" project="CSC1031_Graded_Project_60" 
+  <class id="14" language="java" name="AllFR_SRP.CreateBankAccountTransaction" project="CSC1031_Graded_Project_60" 
     file="/CSC1031_Graded_Project_60/src/AllFR_SRP/CreateBankAccountTransaction.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="227" width="347" x="42" y="810"/>    
+    <position height="227" width="347" x="3258" y="799"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="16" language="java" name="AllFR_SRP.BankAccount" project="CSC1031_Graded_Project_60" 
+  <class id="15" language="java" name="AllFR_SRP.BankAccount" project="CSC1031_Graded_Project_60" 
     file="/CSC1031_Graded_Project_60/src/AllFR_SRP/BankAccount.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="191" width="301" x="450" y="1560"/>    
+    <position height="191" width="301" x="2936" y="1585"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="17" language="java" name="AllFR_SRP.RegisterClientTransaction" project="CSC1031_Graded_Project_60" 
+  <class id="16" language="java" name="AllFR_SRP.RegisterClientTransaction" project="CSC1031_Graded_Project_60" 
     file="/CSC1031_Graded_Project_60/src/AllFR_SRP/RegisterClientTransaction.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="227" width="319" x="1464" y="810"/>    
+    <position height="227" width="319" x="1388" y="799"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="18" language="java" name="AllFR_SRP.ScheduleAppointmentTransaction" project="CSC1031_Graded_Project_60" 
+  <class id="17" language="java" name="AllFR_SRP.ScheduleAppointmentTransaction" project="CSC1031_Graded_Project_60" 
     file="/CSC1031_Graded_Project_60/src/AllFR_SRP/ScheduleAppointmentTransaction.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="209" width="457" x="3110" y="453"/>    
+    <position height="-1" width="-1" x="2457" y="1754"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="19" language="java" name="AllFR_SRP.MoneyTransferTransaction" project="CSC1031_Graded_Project_60" 
+  <class id="18" language="java" name="AllFR_SRP.MoneyTransferTransaction" project="CSC1031_Graded_Project_60" 
     file="/CSC1031_Graded_Project_60/src/AllFR_SRP/MoneyTransferTransaction.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="263" width="302" x="790" y="810"/>    
+    <position height="263" width="302" x="2874" y="799"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <dependency id="20">    
-    <bendpoint x="2205" y="810"/>    
-    <end type="SOURCE" refId="10"/>    
+  <dependency id="19">    
+    <end type="SOURCE" refId="16"/>    
     <end type="TARGET" refId="8"/>  
   </dependency>  
-  <dependency id="21">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="8"/>  
-  </dependency>  
-  <association id="22">    
-    <bendpoint x="3140" y="810"/>    
-    <bendpoint x="3140" y="1113"/>    
-    <end type="SOURCE" refId="18" navigable="false">      
-      <attribute id="23" name="scheduled"/>      
-      <multiplicity id="24" minimum="0" maximum="2147483647"/>    
+  <association id="20">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="21" name="bookedAppointments"/>      
+      <multiplicity id="22" minimum="0" maximum="2147483647"/>    
     </end>    
     <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="25">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="26" name="client"/>      
-      <multiplicity id="27" minimum="0" maximum="1"/>    
+  <association id="23">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="24" name="bankAccounts"/>      
+      <multiplicity id="25" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="15" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="26">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <dependency id="27">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="28">    
+    <bendpoint x="1220" y="799"/>    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <association id="29">    
+    <bendpoint x="2170" y="1686"/>    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="30" name="app"/>      
+      <multiplicity id="31" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="32">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <association id="33">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="34" name="ScheduledAppointments"/>      
+      <multiplicity id="35" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="36">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="37" name="client"/>      
+      <multiplicity id="38" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="28">    
-    <bendpoint x="51" y="1113"/>    
-    <bendpoint x="51" y="1560"/>    
-    <end type="SOURCE" refId="15"/>    
-    <end type="TARGET" refId="12"/>  
-  </dependency>  
-  <dependency id="29">    
-    <bendpoint x="1307" y="453"/>    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="17"/>  
-  </dependency>  
-  <dependency id="30">    
-    <end type="SOURCE" refId="17"/>    
-    <end type="TARGET" refId="8"/>  
-  </dependency>  
-  <dependency id="31">    
-    <bendpoint x="398" y="453"/>    
-    <end type="SOURCE" refId="13"/>    
+  <association id="39">    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="40" name="toBeScheduled"/>      
+      <multiplicity id="41" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="42">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="15"/>  
+  </generalization>  
+  <dependency id="43">    
+    <end type="SOURCE" refId="14"/>    
     <end type="TARGET" refId="15"/>  
   </dependency>  
-  <dependency id="32">    
-    <end type="SOURCE" refId="17"/>    
-    <end type="TARGET" refId="4"/>  
+  <dependency id="44">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="8"/>  
   </dependency>  
-  <dependency id="33">    
-    <bendpoint x="459" y="1113"/>    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="16"/>  
+  <dependency id="45">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="15"/>  
   </dependency>  
-  <dependency id="34">    
-    <bendpoint x="2971" y="1113"/>    
+  <dependency id="46">    
     <end type="SOURCE" refId="2"/>    
     <end type="TARGET" refId="7"/>  
   </dependency>  
-  <association id="35">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="36" name="bankAccounts"/>      
-      <multiplicity id="37" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="16" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="38">    
-    <bendpoint x="3161" y="810"/>    
-    <bendpoint x="3161" y="1113"/>    
-    <end type="SOURCE" refId="18" navigable="false">      
-      <attribute id="39" name="toBeScheduled"/>      
-      <multiplicity id="40" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="41">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="42" name="client"/>      
-      <multiplicity id="43" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="44">    
-    <end type="SOURCE" refId="14"/>    
+  <dependency id="47">    
+    <end type="SOURCE" refId="18"/>    
     <end type="TARGET" refId="8"/>  
   </dependency>  
-  <association id="45">    
-    <end type="SOURCE" refId="19" navigable="false">      
-      <attribute id="46" name="client"/>      
-      <multiplicity id="47" minimum="0" maximum="1"/>    
+  <dependency id="48">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="15"/>  
+  </dependency>  
+  <association id="49">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="50" name="client"/>      
+      <multiplicity id="51" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="48">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="49" name="bookedAppointments"/>      
-      <multiplicity id="50" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="51">    
-    <bendpoint x="800" y="453"/>    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="11"/>  
+  <dependency id="52">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="3"/>  
   </dependency>  
-  <generalization id="52">    
+  <dependency id="53">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <generalization id="54">    
     <end type="SOURCE" refId="4"/>    
     <end type="TARGET" refId="3"/>  
   </generalization>  
-  <generalization id="53">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="16"/>  
-  </generalization>  
-  <dependency id="54">    
-    <bendpoint x="1141" y="453"/>    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="14"/>  
+  <dependency id="55">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="8"/>  
   </dependency>  
-  <association id="55">    
+  <dependency id="56">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <dependency id="57">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="12"/>  
+  </dependency>  
+  <association id="58">    
     <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="56" name="appointmentClient"/>      
-      <multiplicity id="57" minimum="0" maximum="1"/>    
+      <attribute id="59" name="appointmentClient"/>      
+      <multiplicity id="60" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="58">    
-    <bendpoint x="2226" y="810"/>    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="4"/>  
-  </dependency>  
-  <dependency id="59">    
-    <bendpoint x="2589" y="810"/>    
-    <end type="SOURCE" refId="18"/>    
-    <end type="TARGET" refId="8"/>  
-  </dependency>  
-  <dependency id="60">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="4"/>  
-  </dependency>  
   <dependency id="61">    
-    <bendpoint x="2589" y="453"/>    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="2"/>  
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="4"/>  
   </dependency>  
-  <generalization id="62">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="16"/>  
-  </generalization>  
-  <dependency id="63">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="8"/>  
-  </dependency>  
-  <dependency id="64">    
-    <bendpoint x="166" y="1113"/>    
-    <bendpoint x="166" y="1560"/>    
-    <end type="SOURCE" refId="15"/>    
-    <end type="TARGET" refId="5"/>  
-  </dependency>  
+  <association id="62">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="63" name="client"/>      
+      <multiplicity id="64" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
   <dependency id="65">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="8"/>  
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="4"/>  
   </dependency>  
   <dependency id="66">    
-    <end type="SOURCE" refId="18"/>    
-    <end type="TARGET" refId="3"/>  
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="8"/>  
   </dependency>  
   <dependency id="67">    
-    <end type="SOURCE" refId="15"/>    
+    <end type="SOURCE" refId="17"/>    
     <end type="TARGET" refId="8"/>  
   </dependency>  
   <dependency id="68">    
-    <bendpoint x="629" y="1113"/>    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="16"/>  
-  </dependency>  
-  <dependency id="69">    
-    <bendpoint x="2568" y="453"/>    
-    <bendpoint x="2568" y="810"/>    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="4"/>  
-  </dependency>  
-  <dependency id="70">    
-    <end type="SOURCE" refId="6"/>    
+    <end type="SOURCE" refId="11"/>    
     <end type="TARGET" refId="8"/>  
   </dependency>  
-  <dependency id="71">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="3"/>  
-  </dependency>  
-  <association id="72">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="73" name="ScheduledAppointments"/>      
-      <multiplicity id="74" minimum="0" maximum="2147483647"/>    
+  <association id="69">    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="70" name="scheduled"/>      
+      <multiplicity id="71" minimum="0" maximum="2147483647"/>    
     </end>    
     <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="75">    
-    <end type="SOURCE" refId="6"/>    
+  <dependency id="72">    
+    <end type="SOURCE" refId="13"/>    
     <end type="TARGET" refId="4"/>  
   </dependency>  
-  <dependency id="76">    
-    <bendpoint x="970" y="453"/>    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="19"/>  
-  </dependency>  
-  <dependency id="77">    
-    <bendpoint x="1486" y="453"/>    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="6"/>  
-  </dependency>  
-  <dependency id="78">    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="10"/>  
-  </dependency>  
-  <dependency id="79">    
-    <end type="SOURCE" refId="14"/>    
-    <end type="TARGET" refId="4"/>  
-  </dependency>  
-  <dependency id="80">    
-    <bendpoint x="255" y="1113"/>    
-    <end type="SOURCE" refId="15"/>    
-    <end type="TARGET" refId="16"/>  
-  </dependency>  
-  <association id="81">    
-    <bendpoint x="3119" y="810"/>    
-    <bendpoint x="3119" y="1113"/>    
-    <end type="SOURCE" refId="18" navigable="false">      
-      <attribute id="82" name="app"/>      
-      <multiplicity id="83" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="84">    
-    <bendpoint x="419" y="453"/>    
-    <bendpoint x="419" y="810"/>    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="8"/>  
-  </dependency>  
+  <generalization id="73">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="15"/>  
+  </generalization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    
