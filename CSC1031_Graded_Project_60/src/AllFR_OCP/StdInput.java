@@ -3,7 +3,6 @@ package AllFR_OCP;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Scanner;
 
 
 public class StdInput {
@@ -15,7 +14,6 @@ public class StdInput {
 
 		System.out.println( ">" );
 
-
 		BufferedReader input = new BufferedReader( new InputStreamReader( System.in ) );
 
 		String value = null;
@@ -25,19 +23,6 @@ public class StdInput {
 		}
 
 		catch( IOException ex ) { ex.printStackTrace(); }
-
-
-		/*
-		 * System.out.println( "\nProvide " + label + ":" );
-		 * 
-		 * System.out.println( ">" );
-		 * 
-		 * Scanner scanner = new Scanner( System.in );
-		 * 
-		 * String value = scanner.nextLine();
-		 * 
-		 * //scanner.close();
-		 */
 
 	    return value;
 	}

@@ -3,12 +3,12 @@ package AllFR_OCP;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-public class CreateClientProfileTransactionImpl1 extends CreateClientProfileTransaction{
+public class CreateClientProfileTransactionImpl1 implements CreateClientProfileTransaction{
 	
-	/*
-	 * private String name; private String address; private String DoB;
-	 */
-	
+	private String name; 
+	private String address; 
+	private String DoB;
+	 
 	public void createClientProfile(BankClient clientLoggedIn) throws ParseException {
 		
 		provideProfileDetails();

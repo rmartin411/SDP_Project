@@ -1,10 +1,6 @@
 package AllFR_OCP;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -63,7 +59,7 @@ public static void main(String[] args) throws ParseException {
 				
 				ClientLogInTransaction object1 = new ClientLogInTransaction();
 					
-				BankClient clientLoggedIn = object1.clientLogin(bankClients);
+				User clientLoggedIn = object1.clientLogin(bankClients);
 				
 				if (clientLoggedIn != null) {
 					
@@ -91,67 +87,31 @@ public static void main(String[] args) throws ParseException {
 							else if (clientChoice.equals("1")) { // Change client details
 								
 								ChangeClientDetailsTransaction object = new ChangeClientDetailsTransaction();
-								object.changeClientDetails(clientLoggedIn);
+								object.changeClientDetails((BankClient)clientLoggedIn);
 								
 							}
 							
 							else if (clientChoice.equals("2")) { // delete bank account
 								
 								DeleteBankAccountTransaction object = new DeleteBankAccountTransaction();
-								object.deleteBankAccount(clientLoggedIn);
+								object.deleteBankAccount((BankClient)clientLoggedIn);
 													
 							}
 							
 							else if (clientChoice.equals("3")) { // Money Transfer
 								
 								MoneyTransferTransaction object = new MoneyTransferTransaction();
-								object.makeMoneyTransfer(clientLoggedIn);
+								object.makeMoneyTransfer((BankClient)clientLoggedIn);
 								
-								//clientLoggedIn.print();
 							}
 							
 							else if (clientChoice.equals("4")) { //Book Appointment
 								
 								BookAppointmentTransaction object = new BookAppointmentTransaction();
-								object.bookAppointmentTransaction(clientLoggedIn);
+								object.bookAppointmentTransaction((BankClient)clientLoggedIn);
 								
-								//clientLoggedIn.print();
-
 							}
 							
-						/*
-						 * else if (clientChoice.equals("5")) {
-						 * 
-						 * ChangeClientDetailsTransaction object = new ChangeClientDetailsTransaction();
-						 * 
-						 * object.changeClientDetails(clientLoggedIn);
-						 * 
-						 * }
-						 * 
-						 * else if (clientChoice.equals("6")) {
-						 * 
-						 * MoneyTransferTransaction object = new MoneyTransferTransaction();
-						 * 
-						 * object.makeMoneyTransfer(clientLoggedIn);
-						 * 
-						 * }
-						 * 
-						 * else if (clientChoice.equals("7")) { // Book appointment
-						 * 
-						 * BookAppointmentTransaction object = new BookAppointmentTransaction();
-						 * 
-						 * object.bookAppointmentTransaction(clientLoggedIn);
-						 * 
-						 * }
-						 * 
-						 * else if (clientChoice.equals("8")) { // Delete bank account
-						 * 
-						 * DeleteBankAccountTransaction object = new DeleteBankAccountTransaction();
-						 * 
-						 * object.deleteBankAccount(clientLoggedIn);
-						 * 
-						 * }
-						 */
 							
 						}
 					}

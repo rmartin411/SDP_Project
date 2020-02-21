@@ -1,7 +1,5 @@
 package AllFR_OCP;
 
-import java.util.Date;
-
 public abstract class User {
 	
 	public String name;

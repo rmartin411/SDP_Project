@@ -1,6 +1,5 @@
 package AllFR_OCP;
 
-
 public class Notification {
 	
 	public BankClient client;

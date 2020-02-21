@@ -15,11 +15,11 @@ public class BankAdministratorUI {
 		//List<BankAccount> toBeVerifiedAccounts = new ArrayList<BankAccount>();
 		//List<BankAccount> VerifiedAccounts = new ArrayList<BankAccount>();
 		  
-		BankAdministrator admin = new BankAdministrator("Admin");
+		User admin = new BankAdministrator("Admin");
 		  
-		BankClient client1 = new BankClient("Ross Martin", "QUB", new
+		User client1 = new BankClient("Ross Martin", "QUB", new
 				SimpleDateFormat("dd/MM/yyy").parse("12/01/2001"), "username1", "password1");
-		BankClient client2 = new BankClient("Austin Martin", "BHS", new
+		User client2 = new BankClient("Austin Martin", "BHS", new
 		  SimpleDateFormat("dd/MM/yyy").parse("22/08/2004"), "username1", "password1");
 		  
 		BankAccount account = new PrimaryAccount("primary", 1234.56);
@@ -27,22 +27,22 @@ public class BankAdministratorUI {
 		BankAccount account2 = new PrimaryAccount("primary", 0.21);
 		BankAccount account3 = new SavingsAccount("savings", 0.0);
 		  
-		client1.bankAccounts.add(account); 
+		((BankClient)client1).bankAccounts.add(account); 
 		//toBeVerifiedAccounts.add(account);
 		  
-		client1.bankAccounts.add(account1);
+		((BankClient)client1).bankAccounts.add(account1);
 		//toBeVerifiedAccounts.add(account1);
 		  
-		client2.bankAccounts.add(account2); 
+		((BankClient)client2).bankAccounts.add(account2); 
 		//toBeVerifiedAccounts.add(account2);
 		  
-		client2.bankAccounts.add(account3);
+		((BankClient)client2).bankAccounts.add(account3);
 		//toBeVerifiedAccounts.add(account3);		  
 		  
-		Notification notification = new Notification(client1, account);
-		Notification notification1 = new Notification(client1, account1);
-		Notification notification2 = new Notification(client2, account2);
-		Notification notification3 = new Notification(client2, account3);
+		Notification notification = new Notification((BankClient)client1, account);
+		Notification notification1 = new Notification((BankClient)client1, account1);
+		Notification notification2 = new Notification((BankClient)client2, account2);
+		Notification notification3 = new Notification((BankClient)client2, account3);
 		  
 		  
 		listOfNotifications.add(notification);

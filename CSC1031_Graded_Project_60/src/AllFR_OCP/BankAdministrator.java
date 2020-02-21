@@ -1,7 +1,6 @@
 package AllFR_OCP;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class BankAdministrator extends User{
