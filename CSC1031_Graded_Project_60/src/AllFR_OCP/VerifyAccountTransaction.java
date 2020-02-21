@@ -1,44 +1,42 @@
-package AllFR_SRP;
+package AllFR_OCP;
 
 import java.util.List;
 
 public class VerifyAccountTransaction {
 	
 	private List<Notification> listNotifications;
-	private List<BankAccount> toBeVerifiedAccounts;
+	//private List<BankAccount> toBeVerifiedAccounts;
 	private int indexAccount;
 	private BankAccount account;
+	private BankClient client;
 	private String answer;
 
-	public void verifyAccountTransaction(int index, List<BankAccount> toBeVerifiedAccounts,
-			List<BankAccount> verifiedAccounts) {
+	public void verifyAccountTransaction(int index, List<Notification> listNotifications) {
 		
-		this.toBeVerifiedAccounts = toBeVerifiedAccounts;
+		this.listNotifications = listNotifications;
 		this.indexAccount = index;
 		
 		provideDetails();
 		
 		String error = checkTransactionStructure();
 		if( error != null ) printErrorMessage( error );
-		else executeTransaction(toBeVerifiedAccounts, verifiedAccounts);
+		else executeTransaction(listNotifications);
 	}
 
 	private void provideDetails() {
 		
-		account = toBeVerifiedAccounts.get(indexAccount);
+		account = listNotifications.get(indexAccount).clientsAccount;
+		client = listNotifications.get(indexAccount).client;
 		StdInput input = new StdInput();
 		
-		//String clientName = account.accountType;
-		String accountType = account.accountType;
-		int accountNumber = account.accountNumber;
-		double accoutBalance = account.accountBalance;
-
 		System.out.println("Bank Account Details:");
 		System.out.println("-------------------- \n");
-		//System.out.println("Client Name: " + clientName);
-		System.out.println("Account Type: " + accountType);
-		System.out.println("Account Number: " + accountNumber);
-		System.out.println("Account Balance: " + accoutBalance + "\n\n");
+		System.out.println("Client ID: " + client.clientID);
+		System.out.println("Client Name: " + client.name);
+		System.out.println("--------------------");
+		System.out.println("Account Type: " + account.accountType);
+		System.out.println("Account Number: " + account.accountNumber);
+		System.out.println("Account Balance: " + account.accountBalance + "\n\n");
 
 		System.out.println( "1. Verify account" );
 		System.out.println( "2. Do not verify account" );
@@ -61,10 +59,10 @@ public class VerifyAccountTransaction {
 		System.out.println( error );
 	}
 
-	private void executeTransaction(List<BankAccount> toBeVerifiedAccounts, List<BankAccount> verifiedAccounts) {
+	private void executeTransaction(List<Notification> listNotifications) {
 		if (answer.equals("1")) {
 			//toBeVerifiedAccounts.remove(account);
-			verifiedAccounts.add(account);
+			//verifiedAccounts.add(account);
 			
 			account.setVerified(true);
 			

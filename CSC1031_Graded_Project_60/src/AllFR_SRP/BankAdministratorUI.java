@@ -12,8 +12,8 @@ public class BankAdministratorUI {
 		
 		List<Notification> listOfNotifications = new ArrayList<Notification>();
 	
-		List<BankAccount> toBeVerifiedAccounts = new ArrayList<BankAccount>();
-		List<BankAccount> VerifiedAccounts = new ArrayList<BankAccount>();
+		//List<BankAccount> toBeVerifiedAccounts = new ArrayList<BankAccount>();
+		//List<BankAccount> VerifiedAccounts = new ArrayList<BankAccount>();
 		  
 		BankAdministrator admin = new BankAdministrator("Admin");
 		  
@@ -28,16 +28,16 @@ public class BankAdministratorUI {
 		BankAccount account3 = new SavingsAccount("savings", 0.0);
 		  
 		client1.bankAccounts.add(account); 
-		toBeVerifiedAccounts.add(account);
+		//toBeVerifiedAccounts.add(account);
 		  
 		client1.bankAccounts.add(account1);
-		toBeVerifiedAccounts.add(account1);
+		//toBeVerifiedAccounts.add(account1);
 		  
 		client2.bankAccounts.add(account2); 
-		toBeVerifiedAccounts.add(account2);
+		//toBeVerifiedAccounts.add(account2);
 		  
 		client2.bankAccounts.add(account3);
-		toBeVerifiedAccounts.add(account3);		  
+		//toBeVerifiedAccounts.add(account3);		  
 		  
 		Notification notification = new Notification(client1, account);
 		Notification notification1 = new Notification(client1, account1);
@@ -49,11 +49,14 @@ public class BankAdministratorUI {
 		listOfNotifications.add(notification1);
 		listOfNotifications.add(notification2);
 		listOfNotifications.add(notification3);
-		  
+		
+
+		System.out.println(listOfNotifications.size());	
+		
 		System.out.println("\n\n== Accounts to be Verified ==\n");
 			
-		if (toBeVerifiedAccounts != null) {
-			for (int index = 0; index < toBeVerifiedAccounts.size(); index++) {
+		if (listOfNotifications != null) {
+			for (int index = 0; index < listOfNotifications.size(); index++) {
 					
 				VerifyAccountTransaction verAccount = new VerifyAccountTransaction();
 				verAccount.verifyAccountTransaction(index, toBeVerifiedAccounts, VerifiedAccounts );

@@ -34,10 +34,10 @@ public static void main(String[] args) throws ParseException {
 			
 			else if (choice.equals("1")) {
 				
-				RegisterClientTransaction object = new RegisterClientTransaction();
+				RegisterClientTransaction object = new RegisterClientTransactionImpl1();
 				object.registerNewClient(bankClients);
 				
-				CreateClientProfileTransaction objectCreateProfile = new CreateClientProfileTransaction();
+				CreateClientProfileTransaction objectCreateProfile = new CreateClientProfileTransactionImpl1();
 				objectCreateProfile.createClientProfile(bankClients.get(bankClients.size()-1)); // the last user registered is the user is the last user in the list of bankCLients.
 				
 				do {

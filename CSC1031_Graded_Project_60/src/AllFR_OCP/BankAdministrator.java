@@ -8,17 +8,17 @@ public class BankAdministrator extends User{
 	
 	
 	private static int nextAdminID = 1;
-	public int AdminID;
+	public int adminID;
 	
 	public List<Notification> notifications;
 	
 	public List<BankAccount> clientBankAccountToVerify;
 	public List<BankClient> ClientProfileToVerify;
 	
-	public BankAdministrator(String name, String address, Date DoB) {
-		super(name, address, DoB);
+	public BankAdministrator(String name) {
+		super(name);
 		
-		this.AdminID = getNextAdminID();
+		this.adminID = getNextAdminID();
 		
 		notifications = new ArrayList<Notification>();
 	}
@@ -32,6 +32,11 @@ public class BankAdministrator extends User{
 	@Override
 	public void print() {
 		// TODO Auto-generated method stub
+		System.out.println("Bank Administrator Details:");
+		System.out.println("----------------------\n\n");
+		
+		System.out.println("Admin ID: " + adminID);
+		System.out.println("Name: " + name);
 		
 	}
 	

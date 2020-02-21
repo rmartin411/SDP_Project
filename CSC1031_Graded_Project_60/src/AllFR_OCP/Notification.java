@@ -1,21 +1,14 @@
 package AllFR_OCP;
 
-import java.util.Date;
 
 public class Notification {
 	
-	public BankClient appointmentClient;
-	public Date appointmentDate;
+	public BankClient client;
+	public BankAccount clientsAccount;
 	
-	
-	public Notification(BankClient client, BankAdministrator admin, Date date) {
+	public Notification(BankClient client, BankAccount account) {
 		
-		this.appointmentClient = client;
-		this.appointmentDate = date;
+		this.client = client;
+		this.clientsAccount = account;
 	}
-	
-	
-	
-	
-
 }

@@ -21,8 +21,12 @@ public abstract class BankAccount { // should this be abstract
 		this.verified = false;
 	}
 	
-	public void setAccountBalance(double balance) {
+	public final void setAccountBalance(double balance) {
 		this.accountBalance = balance;
+	}
+	
+	public final void setVerified(Boolean bol) {
+		this.verified = bol;
 	}
 
 }

@@ -8,6 +8,8 @@ import java.util.List;
 public class BankEmployeeUI {
 
 	public static void main(String[] args) throws ParseException {
+		
+		
 				
 		List<Appointment> toBeScheduledBookings = new ArrayList<Appointment>();
 		List<Appointment> scheduledBookings = new ArrayList<Appointment>();
