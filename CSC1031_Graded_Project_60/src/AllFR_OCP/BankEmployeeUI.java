@@ -32,13 +32,11 @@ public class BankEmployeeUI {
 		
 		Appointment appointment = new Appointment(new SimpleDateFormat("dd/MM/yyy").parse("12/01/2001"), (BankEmployee)employee, (BankClient)client1, false);
 		Appointment appointment2 = new Appointment(new SimpleDateFormat("dd/MM/yyy").parse("12/01/2001"), (BankEmployee)employee, (BankClient)client2, false);
-
 		
 		toBeScheduledBookings.add(appointment);
 		toBeScheduledBookings.add(appointment2);
-
 		
-		print(toBeScheduledBookings);
+		ListPrint.printAppointment(toBeScheduledBookings);
 		
 		System.out.println("\n\n== Bookings to be Schelduled ==\n");
 		
@@ -50,16 +48,10 @@ public class BankEmployeeUI {
 			}
 		}
 		
-		print(toBeScheduledBookings);
+		ListPrint.printAppointment(toBeScheduledBookings);
 
 	}
 	
-	public static void print(List<Appointment> appointment) {
-		
-		for (int i = 0; i < appointment.size(); i ++) {
-			System.out.println(appointment.get(i).client.name);
-		}
-		
-	}
+	
 
 }

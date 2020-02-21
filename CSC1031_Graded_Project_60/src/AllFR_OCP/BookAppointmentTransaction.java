@@ -18,7 +18,6 @@ public class BookAppointmentTransaction   {
 		String error = checkTransactionStructure();
 		
 		if( error != null ) printErrorMessage( error );
-
 		else executeBookingTransaction( clientLoggedIn );
 		
 		

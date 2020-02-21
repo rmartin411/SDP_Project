@@ -13,7 +13,7 @@ public static void main(String[] args) throws ParseException {
 		StdInput input = new StdInput();
 		
 		while(true) {
-			//print(bankClients);
+			ListPrint.printBankClient(bankClients);
 			
 			System.out.println("== Welcome to the Bank App ==");
 			
@@ -48,7 +48,6 @@ public static void main(String[] args) throws ParseException {
 					if (accountChoice.equals("n")) {
 						break;
 					}
-					
 				}
 				
 				while(true);
@@ -72,10 +71,6 @@ public static void main(String[] args) throws ParseException {
 							System.out.println("2. Delete Bank Account");
 							System.out.println("3. Money Transfer");
 							System.out.println("4. Book Appointment");
-							//System.out.println("5. Change profile details");
-							//System.out.println("6. Transfer money");
-							//System.out.println("7. Book appointment");
-							//System.out.println("8. Delete bank account");
 							
 							String clientChoice = input.read("choice");
 							
@@ -111,19 +106,9 @@ public static void main(String[] args) throws ParseException {
 								object.bookAppointmentTransaction((BankClient)clientLoggedIn);
 								
 							}
-							
-							
 						}
 					}
 				}
 			}
 		}
-		
-	public static void print( List<BankClient> clients ) {
-
-		System.out.println( "Bank Clients:\n" );
-
-		for( int i = 0; clients != null && i < clients.size(); ++i ) clients.get( i ).print();
-	}
-
 }

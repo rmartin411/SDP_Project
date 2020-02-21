@@ -15,8 +15,6 @@ public class BankAdministratorUI {
 		//List<BankAccount> toBeVerifiedAccounts = new ArrayList<BankAccount>();
 		//List<BankAccount> VerifiedAccounts = new ArrayList<BankAccount>();
 		  
-		
-		
 		User admin = new BankAdministrator("Admin");
 		  
 		User client1 = new BankClient("Ross Martin", "QUB", new

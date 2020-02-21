@@ -83,7 +83,7 @@ public class DeleteBankAccountTransaction  {
 			newListBankAccounts.add(clientLoggedIn.bankAccounts.get(accAfter));
 		}
 		
-		// overwrite old arraylists with new arraylist without the account that was deleted
+		//overwrite old arraylists with new arraylist without the account that was deleted
 		clientLoggedIn.bankAccounts = newListBankAccounts;
 		
 	}

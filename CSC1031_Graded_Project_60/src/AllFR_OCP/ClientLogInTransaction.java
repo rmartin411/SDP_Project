@@ -21,9 +21,7 @@ public class ClientLogInTransaction  {
 			BankClient clientLoggedIn = executeClientLogInTransaction(bankClients);
 			return clientLoggedIn;
 		}
-		
 		return null;
-		
 	}
 	
 	private void provideLogInDetails() {
