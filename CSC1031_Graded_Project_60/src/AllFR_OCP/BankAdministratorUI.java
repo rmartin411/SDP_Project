@@ -15,6 +15,8 @@ public class BankAdministratorUI {
 		//List<BankAccount> toBeVerifiedAccounts = new ArrayList<BankAccount>();
 		//List<BankAccount> VerifiedAccounts = new ArrayList<BankAccount>();
 		  
+		
+		
 		User admin = new BankAdministrator("Admin");
 		  
 		User client1 = new BankClient("Ross Martin", "QUB", new
@@ -44,12 +46,10 @@ public class BankAdministratorUI {
 		Notification notification2 = new Notification((BankClient)client2, account2);
 		Notification notification3 = new Notification((BankClient)client2, account3);
 		  
-		  
 		listOfNotifications.add(notification);
 		listOfNotifications.add(notification1);
 		listOfNotifications.add(notification2);
 		listOfNotifications.add(notification3);
-		
 
 		System.out.println(listOfNotifications.size());	
 		

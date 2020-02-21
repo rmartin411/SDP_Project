@@ -53,7 +53,5 @@ public class RegisterClientTransactionImpl1 implements RegisterClientTransaction
 
 		System.err.println( error );		
 	}
-			
-	
-
+		
 }
