@@ -103,19 +103,6 @@ public class BankClient extends User{
 		this.password = password;
 	}
 	
-	/*
-	 * public void addAccount(String accountNumber, String accountType, double
-	 * balance) {
-	 * 
-	 * if (accountNumber != null && accountType != null && balance >= 0.0) {
-	 * 
-	 * BankAccount account = new SavingsAccount( accountNumber, accountType,
-	 * balance); bankAccounts.add(account);
-	 * 
-	 * } }
-	 */	
-	
-	
 	public void addAppointment(Date appointmentDate, BankEmployee Employee) {
 		if (appointmentDate != null & Employee != null) {
 			
@@ -124,7 +111,6 @@ public class BankClient extends User{
 			bookedAppointments.add(appointment);
 			
 			//BankEmployee.notify(appointment);
-			
 		}
 	}
 	
@@ -150,18 +136,4 @@ public class BankClient extends User{
 		this.address = address;
 		this.DoB = DoB;
 	}
-
-	
-
-
-
-	
-	
-
-
-	
-	
-	
-	
-
 }

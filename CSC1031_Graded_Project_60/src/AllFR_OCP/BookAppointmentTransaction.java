@@ -20,16 +20,13 @@ public class BookAppointmentTransaction   {
 		if( error != null ) printErrorMessage( error );
 		else executeBookingTransaction( clientLoggedIn );
 		
-		
 	}
 
 	private void provideBookingDetails() {
-		// TODO Auto-generated method stub
 		
 		System.out.println("\n\n===Book an appointment===\n");
 		
 		StdInput object = new StdInput();
-
 		
 		dateOfAppointment = object.read("Date of appointment");	
 		nameOfEmployee = object.read("Employee's name you wish to book an appointment with");
@@ -37,13 +34,11 @@ public class BookAppointmentTransaction   {
 	}
 
 	public String checkTransactionStructure() {
-		// TODO Auto-generated method stub
 		
 		if (dateOfAppointment.isEmpty()) return "No date";
 		
 		if (nameOfEmployee.isEmpty()) return "No employee name provided";
 	
-		
 		return null;
 	}
 
@@ -57,7 +52,16 @@ public class BookAppointmentTransaction   {
 		
 		Appointment object = new Appointment(new SimpleDateFormat("dd/MM/yyyy").parse(dateOfAppointment), employee, clientLoggedIn, false);
 		
-		employee.appointments.add(object);
+		System.out.println("Employee has been sent a notification. They will get back to you to confirm if appointment can be scheduled");
+		
+		//employee.appointments.add(object);
+		try {
+			employee.notify(object);
+		}
+		catch(NullPointerException e) {
+			System.out.print("");
+		}
+		
 		
 	}
 

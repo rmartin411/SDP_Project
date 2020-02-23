@@ -1,8 +1,6 @@
 package AllFR_OCP;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -87,8 +85,6 @@ public class ChangeClientDetailsTransaction {
 				
 	}
 	
-	
-
 	 public String checkTransactionStructure() throws ParseException  {
 		 
 		 if( name.isEmpty()|| address.isEmpty() || DoB == null ) return "Error client transaction";
@@ -110,27 +106,4 @@ public class ChangeClientDetailsTransaction {
 
 	System.err.println( message );		
 	}
-			
-	public static String read( String label ) {
-
-		System.out.println( "\nProvide your " + label + ":" );
-
-		System.out.println( ">" );
-
-
-		BufferedReader input = new BufferedReader( new InputStreamReader( System.in ) );
-
-		String value = null;
-
-		try {
-
-			value = input.readLine();
-		}
-
-		catch (IOException ex) { ex.printStackTrace(); }
-
-
-		return value;
-	}
-
 }

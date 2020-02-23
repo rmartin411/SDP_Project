@@ -10,8 +10,6 @@ public class MoneyTransferTransaction  {
 	
 	public int withdrawAccountIndex;
 	public int depositAccountIndex;
-
-
 	
 	public void makeMoneyTransfer(BankClient clientLoggedIn) {
 		
@@ -25,11 +23,9 @@ public class MoneyTransferTransaction  {
 
 		else executeMoneyTransferTransaction( clientLoggedIn );
 		
-		
 	}
 
 	public void provideTransferDetails() {
-		// TODO Auto-generated method stub
 		
 		System.out.println("\n\n=== Transfer Money ===\n");
 
@@ -43,6 +39,8 @@ public class MoneyTransferTransaction  {
 
 	public String checkTransactionStructure() {
 		
+		boolean depositAccount = false;
+		
 		if (Double.parseDouble(amountToTransfer) <0.0) return "Transfer amount must be positive";
 		
 		for (int wAccount = 0; wAccount < client.bankAccounts.size(); wAccount++) {
@@ -50,21 +48,21 @@ public class MoneyTransferTransaction  {
 			if (client.bankAccounts.get(wAccount).accountNumber == Integer.parseInt(withdrawAccountNum)) { // check account belongs to client
 				
 				withdrawAccountIndex = wAccount;
+
 				double balance = client.bankAccounts.get(wAccount).accountBalance; // get the balance of withdrawal account
 				
 				if (balance >= Double.parseDouble(amountToTransfer)) { // check the user has enough money in their account
 					
 					for (int dAccount = 0; dAccount < client.bankAccounts.size(); dAccount++) {
 						
-						if (client.bankAccounts.get(wAccount).accountNumber== Integer.parseInt(depositAccountNum)) { // check deposit account belongs to user 
-								
+						if (client.bankAccounts.get(dAccount).accountNumber== Integer.parseInt(depositAccountNum)) { // check deposit account belongs to user 
+							
 							depositAccountIndex = dAccount;
+							depositAccount = true;
 							return null;
 						}
-						else {
-							return "Account to deposit to not found";
-						}
-					}	
+					}
+					if (depositAccount == false) return "Account to deposit to not found";
 				}
 				else {
 					return "Insufficient funds to make transfer";
@@ -89,8 +87,4 @@ public class MoneyTransferTransaction  {
 		client.bankAccounts.get(depositAccountIndex).setAccountBalance(client.bankAccounts.get(depositAccountIndex).accountBalance+Double.parseDouble(amountToTransfer)); // and increase deposited account by the same amount
 		
 	}
-	
-	
-	
-
 }

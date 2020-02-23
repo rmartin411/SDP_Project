@@ -98,6 +98,8 @@ public static void main(String[] args) throws ParseException {
 								MoneyTransferTransaction object = new MoneyTransferTransaction();
 								object.makeMoneyTransfer((BankClient)clientLoggedIn);
 								
+								//ListPrint.printBankClient(bankClients);
+								
 							}
 							
 							else if (clientChoice.equals("4")) { //Book Appointment

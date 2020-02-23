@@ -8,8 +8,6 @@ public class DeleteBankAccountTransaction  {
 	public String accountNumberProvided;
 	public BankClient client;
 	
-	
-	
 	public void deleteBankAccount(BankClient clientLoggedIn) {
 		
 		client = clientLoggedIn;

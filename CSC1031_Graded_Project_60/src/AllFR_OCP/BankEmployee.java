@@ -26,13 +26,11 @@ public class BankEmployee extends User{
 		return id;
 	}
 	
-	
-	
 	public void notify(Appointment app) {
+		appointments.add(app);
 		
 	}
 	
-
 	@Override
 	public void print() {
 		// TODO Auto-generated method stub
@@ -43,7 +41,4 @@ public class BankEmployee extends User{
 		System.out.println("Name: " + name);
 		
 	}
-	
-	
-
 }
