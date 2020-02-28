@@ -68,6 +68,6 @@ public class BankEmployeeUI {
 			}
 		}
 		
-		//ListPrint.printAppointment(toBeScheduledBookings);
+		//SListPrint.printAppointment(toBeScheduledBookings);
 	}
 }
