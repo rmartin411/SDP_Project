@@ -1,12 +1,9 @@
-package SRP_FR3;
+package part02;
 
 import java.util.List;
 
-//import exampleGroupProject.principledDesign.principles.SRP.FR1_SRP.StdInput;
-
 public class CreateBankAccountTransaction {
 	
-	public String accountNumber;
 	public String accountType;
 	public double accountBalance;
 	
@@ -27,7 +24,7 @@ public class CreateBankAccountTransaction {
 	}
 
 	
-	private void printErrorMessage(String error) {
+	public void printErrorMessage(String error) {
 
 		System.out.println( error );
 	}
@@ -36,15 +33,12 @@ public class CreateBankAccountTransaction {
 
 		StdInput object = new StdInput();
 		
-		accountNumber = object.read(" account number");
 		accountType = object.read("account type");
 		accountBalanceStr = object.read("account balance");
 	}
 	
 	
-	private String checkTransactionStructure() {
-
-		if( accountNumber == null || accountNumber.matches("[0-9]+") == false) return "Error account number";
+	public String checkTransactionStructure() {
 
 		if( accountType == null || (accountType.equals("savings") == false && accountType.equals("primary") == false)) return "Error account type";
 
@@ -70,10 +64,10 @@ public class CreateBankAccountTransaction {
 		BankAccount account = null;
 		
 		if (accountType.equals("primary")) {
-			account = new PrimaryAccount(accountNumber, accountType, accountBalance);
+			account = new PrimaryAccount(accountType, accountBalance);
 		}
 		else {
-			account = new SavingsAccount(accountNumber, accountType, accountBalance);
+			account = new SavingsAccount(accountType, accountBalance);
 		}
 		
 		accounts.add(account);
