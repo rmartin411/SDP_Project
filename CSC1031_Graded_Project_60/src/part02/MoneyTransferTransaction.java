@@ -31,6 +31,8 @@ public class MoneyTransferTransaction  {
 
 		StdInput object = new StdInput();
 		
+		ListPrint.printBankAccounts(client);
+		
 		withdrawAccountNum = object.read("withdrawal account number");	
 		depositAccountNum = object.read("deposited account number");		
 		amountToTransfer = object.read("amount to transfer");
@@ -86,5 +88,6 @@ public class MoneyTransferTransaction  {
 		client.bankAccounts.get(withdrawAccountIndex).setAccountBalance(client.bankAccounts.get(withdrawAccountIndex).accountBalance-Double.parseDouble(amountToTransfer)); // if it does then decrease balance by the amount
 		client.bankAccounts.get(depositAccountIndex).setAccountBalance(client.bankAccounts.get(depositAccountIndex).accountBalance+Double.parseDouble(amountToTransfer)); // and increase deposited account by the same amount
 		
+		client.print();
 	}
 }

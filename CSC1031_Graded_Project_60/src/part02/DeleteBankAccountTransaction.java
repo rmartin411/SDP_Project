@@ -27,7 +27,9 @@ public class DeleteBankAccountTransaction  {
 				
 		StdInput object = new StdInput();
 		
-		accountNumberProvided = object.read(" account number of the account to delete");
+		ListPrint.printBankAccounts(client);
+		
+		accountNumberProvided = object.read(" Account number of the account to be deleted");
 		
 	}
 	
@@ -83,6 +85,8 @@ public class DeleteBankAccountTransaction  {
 		
 		//overwrite old arraylists with new arraylist without the account that was deleted
 		clientLoggedIn.bankAccounts = newListBankAccounts;
+		
+		clientLoggedIn.print();
 		
 	}
 

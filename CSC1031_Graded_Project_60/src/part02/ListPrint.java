@@ -39,10 +39,18 @@ public class ListPrint {
 			System.out.println("Date: " + dateOfAppointment);
 			System.out.println("Employee: " + employeeName);
 			System.out.println("-----------------------------------");
-		
-			
 		}
-
+	}
+	
+	public static void printBankAccounts(BankClient client) {
+		
+		if (client.bankAccounts != null) {
+			for (int i = 0; i <client.bankAccounts.size(); i++) { // iterate through list of their accounts
+				System.out.println( "\tAccount Number = " + client.bankAccounts.get(i).accountNumber); 
+				System.out.println( "\tAccount Type = " + client.bankAccounts.get(i).accountType); 
+				System.out.println( "\tAccount Balance = " + client.bankAccounts.get(i).accountBalance + "\n\n"); 
+			}	
+		}
 	}
 
 }
