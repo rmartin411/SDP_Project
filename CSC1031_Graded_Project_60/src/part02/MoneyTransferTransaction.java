@@ -8,7 +8,7 @@ public class MoneyTransferTransaction  {
 	
 	public BankClient client;
 	
-	public int withdrawAccountIndex;
+	public int withdrawAccountIndex = -1;
 	public int depositAccountIndex;
 	
 	public void makeMoneyTransfer(BankClient clientLoggedIn) {
@@ -50,32 +50,35 @@ public class MoneyTransferTransaction  {
 			if (client.bankAccounts.get(wAccount).accountNumber == Integer.parseInt(withdrawAccountNum)) { // check account belongs to client
 				
 				withdrawAccountIndex = wAccount;
-
-				double balance = client.bankAccounts.get(wAccount).accountBalance; // get the balance of withdrawal account
-				
-				if (balance >= Double.parseDouble(amountToTransfer)) { // check the user has enough money in their account
-					
-					for (int dAccount = 0; dAccount < client.bankAccounts.size(); dAccount++) {
-						
-						if (client.bankAccounts.get(dAccount).accountNumber== Integer.parseInt(depositAccountNum)) { // check deposit account belongs to user 
-							
-							depositAccountIndex = dAccount;
-							depositAccount = true;
-							return null;
-						}
-					}
-					if (depositAccount == false) return "Account to deposit to not found";
-				}
-				else {
-					return "Insufficient funds to make transfer";
-				}
-			}
-			else {
-				return "Account to withdraw from not found";
+				break;
 			}
 		}
+		if (withdrawAccountIndex == -1 ) {
+			return "Account to withdraw from not found";
+		}
+
+		double balance = client.bankAccounts.get(withdrawAccountIndex).accountBalance; // get the balance of withdrawal account
+				
+		if (balance >= Double.parseDouble(amountToTransfer)) { // check the user has enough money in their account
+			for (int dAccount = 0; dAccount < client.bankAccounts.size(); dAccount++) {
+				
+				if (client.bankAccounts.get(dAccount).accountNumber== Integer.parseInt(depositAccountNum)) { // check deposit account belongs to user 
+								
+					depositAccountIndex = dAccount;
+					depositAccount = true;
+					return null;
+				}
+			}
+			if (depositAccount == false) return "Account to deposit to not found";
 		
-		return null;
+		}
+		else {
+			return "Insufficient funds to make transfer";
+		}
+		
+		return "Money Transfer could not take place";
+					
+		
 	}
 
 	public void printErrorMessage(String error) {

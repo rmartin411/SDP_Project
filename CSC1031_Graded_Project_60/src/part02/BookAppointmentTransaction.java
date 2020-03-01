@@ -49,9 +49,10 @@ public class BookAppointmentTransaction   {
 
 	private void executeBookingTransaction(BankClient clientLoggedIn) throws ParseException {
 		// TODO Auto-generated method stub
+		User Employee = new BankEmployee(nameOfEmployee);
+		Appointment object = new Appointment(new SimpleDateFormat("dd/MM/yyyy").parse(dateOfAppointment), (BankEmployee)Employee, clientLoggedIn, false);
 		
-		Appointment object = new Appointment(new SimpleDateFormat("dd/MM/yyyy").parse(dateOfAppointment), employee, clientLoggedIn, false);
-		
+		clientLoggedIn.bookedAppointments.add(object);
 		System.out.println("Employee has been sent a notification. They will get back to you to confirm if appointment can be scheduled");
 		
 		//employee.appointments.add(object);
@@ -61,6 +62,9 @@ public class BookAppointmentTransaction   {
 		catch(NullPointerException e) {
 			System.out.print("");
 		}
+		
+		clientLoggedIn.print();
+		ListPrint.printAppointments(clientLoggedIn.bookedAppointments);
 		
 		
 	}
