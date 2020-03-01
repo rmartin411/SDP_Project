@@ -22,5 +22,27 @@ public class ListPrint {
 		}
 		
 	}
+	
+	public static void printAppointments(List<Appointment> toBeScheduledBookings) {
+		for (int index = 0; index < toBeScheduledBookings.size(); index++) {
+			
+			Appointment app = toBeScheduledBookings.get(index);
+
+			String dateOfAppointment = app.appointmentDate.toGMTString();
+			String employeeName = app.employee.name;
+			String clientName = app.client.name;
+		
+			System.out.println("-----------------------------------");
+			System.out.println("Appointment Details:");
+			System.out.println("-------------------- \n");
+			System.out.println("Client Name: " + clientName);
+			System.out.println("Date: " + dateOfAppointment);
+			System.out.println("Employee: " + employeeName);
+			System.out.println("-----------------------------------");
+		
+			
+		}
+
+	}
 
 }

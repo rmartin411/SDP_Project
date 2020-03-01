@@ -33,8 +33,8 @@ public class CreateBankAccountTransaction {
 
 		StdInput object = new StdInput();
 		
-		accountType = object.read("account type");
-		accountBalanceStr = object.read("account balance");
+		accountType = object.read("account type (primary/savings)");
+		//accountBalanceStr = object.read("account balance");
 	}
 	
 	
@@ -42,35 +42,37 @@ public class CreateBankAccountTransaction {
 
 		if( accountType == null || (accountType.equals("savings") == false && accountType.equals("primary") == false)) return "Error account type";
 
-		if (accountBalanceStr != null) {
-			if (accountBalanceStr.matches("([0-9]*)\\.([0-9]*)")) {
-				
-				accountBalance = Double.parseDouble(accountBalanceStr);				
-			}
-			else {
-				return "Error account balance";
-			}
-		}
-		else {
-			accountBalance = 0.0;
-
-		}
+		/*
+		 * if (accountBalanceStr != null) { if
+		 * (accountBalanceStr.matches("([0-9]*)\\.([0-9]*)")) {
+		 * 
+		 * accountBalance = Double.parseDouble(accountBalanceStr); } else { return
+		 * "Error account balance"; } } else { accountBalance = 0.0;
+		 * 
+		 * }
+		 */
 
 		return null;
 	}
 	
+	@SuppressWarnings("null")
 	private void executeCreateAccountTransaction(List<BankAccount> accounts) {
 
 		BankAccount account = null;
 		
 		if (accountType.equals("primary")) {
-			account = new PrimaryAccount(accountType, accountBalance);
+			account = new PrimaryAccount(accountType, 100.0);
 		}
-		else {
-			account = new SavingsAccount(accountType, accountBalance);
+		else if (accountType.equals("savings")){
+			account = new SavingsAccount(accountType, 100.0);
 		}
 		
-		accounts.add(account);
+		if (account != null) {
+			accounts.add(account);
+			
+			System.out.println("\nAccount Number: " + account.accountNumber + ", Verified: " + account.verified);
+		}
+		
 	}
 	
 

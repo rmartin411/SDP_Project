@@ -41,16 +41,32 @@ public static void main(String[] args) throws ParseException {
 					CreateBankAccountTransaction objectCreateBankAccount = new CreateBankAccountTransaction();
 					objectCreateBankAccount.createNewBankAccount(bankClients.get(bankClients.size()-1).bankAccounts);	
 					
-					System.out.println("Would you like to add another account");
+					System.out.println("\nWould you like to add another account?");
+					System.out.println("0. No extra accounts");
+					System.out.println("1. Extra account");
+
 					
 					String accountChoice = input.read("choice");
 					
-					if (accountChoice.equals("n")) {
+					
+					
+					if (accountChoice.equals("1") == false) {
 						break;
 					}
 				}
 				
 				while(true);
+				
+				/*
+				 * List<BankClient> client = new ArrayList<BankClient>(); //create a list of
+				 * just the newly registered client
+				 * client.add(bankClients.get(bankClients.size()-1));
+				 * 
+				 * ListPrint.printBankClient(client);
+				 */
+				bankClients.get(bankClients.size()-1).print();
+				
+				
 				
 			}
 			

@@ -28,5 +28,7 @@ public abstract class BankAccount { // should this be abstract
 	public final void setVerified(Boolean bol) {
 		this.verified = bol;
 	}
+	
+	
 
 }

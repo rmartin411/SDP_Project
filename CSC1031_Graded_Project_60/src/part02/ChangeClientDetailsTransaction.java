@@ -100,6 +100,8 @@ public class ChangeClientDetailsTransaction {
 		
 		clientLoggedIn.changeCientDetails(name, address, new SimpleDateFormat("dd/MM/yyyy").parse(DoBStr), username, password);
 		
+		clientLoggedIn.print();
+		
 	}
 
 	public void printErrorMessage(String message) {
