@@ -1,4 +1,4 @@
-package SingletonPattern;
+package SingletonPatternTEST;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +11,11 @@ public class BankClientDictionarySingleton {
 	
 	public static BankClientDictionarySingleton getInstance() {
 		
-		if (theInstance == null) theInstance = new BankClientDictionarySingleton();
+		if (theInstance == null) {
+			theInstance = new BankClientDictionarySingleton();
+			
+			
+		}
 		
 		return theInstance;
 	}
@@ -28,21 +32,22 @@ public class BankClientDictionarySingleton {
 	
     public void printBankClients() {
     	
-    	for(int client = 0; bankClients != null & client < bankClients.size(); client++) {
-    		bankClients.get(client).print();
+    	if (bankClients != null) {
+    		for(int client = 0; bankClients != null & client < bankClients.size(); client++) {
+    			bankClients.get(client).print();
+    		}
     	}
-    	
     }
     
     public int searchBankClient( String username, String password ) {
-    	int count = 0;
+    	int pos = -1;
     	
     	for(int client = 0; bankClients != null & client < bankClients.size(); client++) {
     		BankClient cli = bankClients.get(client);
-    		if (cli.username.equals(username) && cli.password.equals(password)) count++;
+    		if (cli.username.equals(username) && cli.password.equals(password)) pos = client;
     	}
 
-		return count;
+		return pos;
     	
     }
     public int size() {
