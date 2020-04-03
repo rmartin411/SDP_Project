@@ -52,8 +52,7 @@ public class BankClient extends User{
 		
 		super("");
 		
-		CheckCredientials c = new CheckCredientials(username, password);
-		
+		BankClientCredentials c = new BankClientCredentials(username, password);
 		
 		this.clientID = getNextClientID();
 
@@ -69,6 +68,8 @@ public class BankClient extends User{
 	
 	public BankClient(String name, String address, Date DoB) { // used on profile creation
 		super(name);
+		
+		BankClientProfile c = new BankClientProfile(name, address, DoB);
 		
 		this.address = address;
 		this.DoB = DoB;
