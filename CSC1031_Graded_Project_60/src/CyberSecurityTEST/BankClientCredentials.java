@@ -2,29 +2,30 @@ package CyberSecurityTEST;
 
 import java.util.ArrayList;
 
-public class BankClientCredentials extends BankClient{
+public class BankClientCredentials {
 	
-	public BankClientCredentials(String username, String password) { // used on registration
-		// TODO Auto-generated constructor stub
-		
-		super(username, password);
-		
-	
-		
-		this.clientID = getNextClientID();
+	private String username;
+	private String password;
 
+	public BankClientCredentials(String username, String password) {
+		boolean initialised = securityManagerCheck(username, password);
+		
+		if (initialised) init (username, password);
+		else throw new SecurityException ("Fake Credentials");
+	}
+
+	private void init(String username, String password) {
 		this.username = username;
 		this.password = password;
-		
-		bankAccounts = new ArrayList<BankAccount>();
-		bookedAppointments = new ArrayList<Appointment>();
-		ScheduledAppointments = new ArrayList<Appointment>();
-		
-		clientCount.incrementAndGet();
+	
 	}
-	
-	
-	
-	
+
+	private boolean securityManagerCheck(String username, String password) {
+		if(username == null || username.charAt(0)=='$') return false;
+		if (password == null || password.charAt(password.length() - 1) == '.') return false;
+		
+		return true;
+	}
 
 }
+
